@@ -3,678 +3,728 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ITnowCR | Catálogo de Productos 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>ITnowCR | Catálogo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* ── Brand exact match ── */
-  --navy:      #1B2A4A;
-  --navy-dk:   #111E36;
-  --navy-lt:   #243561;
-  --navy-mid:  #1E3058;
-  --orange:    #F5A623;
-  --orange-dk: #D4871A;
-  --orange-lt: #FFB940;
+  --cr-blue:   #002B7F;
+  --cr-white:  #FFFFFF;
+  --cr-red:    #CE1126;
+  --navy:      #0A1628;
+  --navy2:     #0F1E38;
+  --navy3:     #162038;
+  --navy4:     #1C2A45;
   --teal:      #2DD4BF;
-  --teal-dk:   #1AADA0;
-  --white:     #FFFFFF;
-  --off-white: #EEF3FB;
-  --dim:       #8A9BB8;
-  --dim2:      #5A6B88;
-  --dark-text: #C8D6EE;
+  --orange:    #F5A623;
+  --gray:      #7A8BA8;
+  --gray-lt:   #B8C8E0;
+  --border:    rgba(255,255,255,0.07);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--navy-dk);color:var(--white);overflow-x:hidden;}
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-track{background:var(--navy-dk);}
-::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--cr-white);min-height:100vh;overflow-x:hidden;}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(17,30,54,0.97);border-bottom:1px solid rgba(45,212,191,0.15);backdrop-filter:blur(12px);}
-.nav-logo{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;letter-spacing:3px;color:var(--white);}
-.nav-logo span{color:var(--orange);}
-.nav-links{display:flex;gap:24px;list-style:none;}
-.nav-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--dim);text-decoration:none;text-transform:uppercase;transition:color .3s;}
-.nav-links a:hover{color:var(--orange);}
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(10,22,40,0.97);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,var(--cr-blue),var(--cr-white),var(--cr-red)) 1;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(12px);}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;letter-spacing:3px;display:flex;align-items:center;gap:10px;}
+.logo-img{width:40px;height:40px;border-radius:50%;object-fit:contain;border:2px solid var(--teal);}
+.l-it{color:var(--cr-blue);text-shadow:0 0 20px rgba(0,43,127,0.5);}
+.l-now{color:var(--cr-white);}
+.l-cr{color:var(--cr-red);text-shadow:0 0 20px rgba(206,17,38,0.5);}
+.nav-right{font-family:'Space Grotesk',monospace;font-size:10px;letter-spacing:3px;color:var(--gray);text-transform:uppercase;}
 
-/* ── COVER ── */
-.cover{height:100vh;min-height:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--navy);}
-.cover-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 55%,rgba(45,212,191,0.07) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 85% 15%,rgba(245,166,35,0.06) 0%,transparent 50%);}
-.cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(45,212,191,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,0.05) 1px,transparent 1px);background-size:70px 70px;}
-.cover-dots{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle,var(--teal) 1px,transparent 1px);background-size:40px 40px;}
+/* HERO */
+.hero{background:linear-gradient(160deg,#0A1628 0%,#0D1E3A 50%,#0A1628 100%);padding:32px 20px 24px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,43,127,0.12),transparent);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cr-blue) 33%,var(--cr-white) 33% 66%,var(--cr-red) 66%);}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,4.5vw,40px);font-weight:700;line-height:1.2;margin-bottom:8px;}
+.hero h1 .accent{color:var(--orange);}
+.hero p{font-size:13px;color:var(--gray);max-width:500px;line-height:1.6;margin-bottom:0;}
+.cr-flag-stripe{display:inline-flex;gap:4px;align-items:center;margin-bottom:12px;}
+.stripe{width:12px;height:4px;border-radius:2px;}
+.s-blue{background:var(--cr-blue);}
+.s-white{background:rgba(255,255,255,0.7);}
+.s-red{background:var(--cr-red);}
 
-.cover-logo-wrap{position:relative;margin-bottom:44px;animation:logoReveal 1.2s cubic-bezier(.16,1,.3,1) both;}
-@keyframes logoReveal{from{opacity:0;transform:scale(.8) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.cover-logo-ring{width:156px;height:156px;border-radius:50%;border:2px solid rgba(45,212,191,0.45);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 60px rgba(45,212,191,0.15);}
-.cover-logo-ring::before{content:'';position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(45,212,191,0.12);}
-.cover-logo-ring::after{content:'';position:absolute;inset:-26px;border-radius:50%;border:1px dashed rgba(245,166,35,0.1);}
-.cover-logo-ring img{width:122px;height:122px;border-radius:50%;object-fit:contain;}
-.glow-ring{position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,0.12) 0%,transparent 65%);animation:breathe 4s ease-in-out infinite;}
-@keyframes breathe{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.07);opacity:1}}
+/* SEARCH */
+.search-section{max-width:1200px;margin:0 auto;padding:20px 20px 0;}
+.search-box{position:relative;}
+.search-box input{width:100%;background:var(--navy3);border:1.5px solid var(--border);border-radius:50px;padding:15px 52px 15px 50px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:var(--cr-white);outline:none;transition:all .3s;}
+.search-box input::placeholder{color:var(--gray);}
+.search-box input:focus{border-color:var(--teal);background:rgba(45,212,191,0.04);}
+.s-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:18px;pointer-events:none;}
+.s-clear{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;border-radius:50%;width:26px;height:26px;color:var(--cr-white);cursor:pointer;font-size:13px;display:none;align-items:center;justify-content:center;}
+.s-clear.show{display:flex;}
 
-.cover-content{position:relative;z-index:2;text-align:center;animation:slideUp 1s .3s cubic-bezier(.16,1,.3,1) both;}
-@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-.cover-brand{font-family:'DM Sans',sans-serif;font-size:clamp(54px,8vw,100px);font-weight:700;letter-spacing:10px;line-height:1;margin-bottom:8px;}
-.cover-brand .it{color:var(--teal);}
-.cover-brand .now{color:var(--white);}
-.cover-brand .cr{color:var(--orange);}
-.cover-sub{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:7px;color:var(--dim);text-transform:uppercase;margin-bottom:48px;}
-.cover-rule{width:60px;height:2px;background:linear-gradient(90deg,var(--teal),var(--orange));margin:0 auto 48px;}
-.cover-catalog-label{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;font-style:italic;color:var(--off-white);letter-spacing:2px;margin-bottom:8px;}
-.cover-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim2);letter-spacing:4px;text-transform:uppercase;}
-.cover-scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeIn 1s 1.5s both;}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.cover-scroll-hint span{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;color:var(--dim2);}
-.scroll-arrow{width:2px;height:36px;background:linear-gradient(180deg,var(--teal),transparent);animation:arrowPulse 2s ease-in-out infinite;}
-@keyframes arrowPulse{0%,100%{opacity:.5}50%{opacity:1}}
+/* FILTERS */
+.filters-section{max-width:1200px;margin:0 auto;padding:14px 20px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.filters-section::-webkit-scrollbar{display:none;}
+.filters{display:flex;gap:8px;white-space:nowrap;}
+.fb{background:var(--navy3);border:1.5px solid var(--border);border-radius:50px;padding:8px 16px;font-size:12px;font-weight:500;color:var(--gray);cursor:pointer;transition:all .25s;white-space:nowrap;}
+.fb:hover{border-color:var(--teal);color:var(--teal);}
+.fb.active{background:var(--cr-blue);border-color:var(--cr-blue);color:var(--cr-white);font-weight:700;}
 
-/* ── HERO ── */
-.section-hero{position:relative;height:360px;overflow:hidden;display:flex;align-items:flex-end;}
-.section-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.25) saturate(.45);transition:transform 8s ease;}
-.section-hero:hover img{transform:scale(1.04);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(17,30,54,.3) 40%,rgba(17,30,54,.95) 100%);}
-.hero-overlay-left{position:absolute;inset:0;background:linear-gradient(to right,rgba(17,30,54,.75) 0%,transparent 55%);}
-.hero-content{position:relative;z-index:2;padding:0 80px 52px;max-width:860px;}
-.hero-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:5px;color:var(--teal);opacity:.9;margin-bottom:10px;display:block;}
-.hero-title{font-family:'DM Sans',sans-serif;font-size:clamp(38px,5vw,62px);font-weight:700;line-height:1.1;color:var(--white);margin-bottom:14px;}
-.hero-title em{font-style:normal;color:var(--orange);}
-.hero-desc{font-size:14px;color:var(--dim);letter-spacing:.3px;line-height:1.65;max-width:500px;}
-.hero-bar{position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--teal),var(--orange),transparent);}
+/* RESULTS */
+.results-row{max-width:1200px;margin:0 auto;padding:12px 20px 0;display:flex;align-items:center;justify-content:space-between;}
+.count{font-size:12px;color:var(--gray);}
+.count b{color:var(--teal);}
 
-/* ── PRODUCTS ── */
-.products-wrap{background:var(--navy);padding:64px 80px;}
+/* GRID */
+.grid-section{max-width:1200px;margin:0 auto;padding:14px 20px 60px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
 
-.cat-label{display:inline-flex;align-items:center;gap:12px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;color:var(--teal);text-transform:uppercase;margin-bottom:28px;}
-.cat-label::before{content:'';display:block;width:18px;height:2px;background:var(--orange);}
-.cat-label::after{content:'';display:block;width:40px;height:1px;background:linear-gradient(90deg,var(--teal),transparent);}
+/* CARD */
+.card{background:var(--navy3);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;animation:fadeUp .4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.card:hover{transform:translateY(-5px);border-color:rgba(0,43,127,0.5);box-shadow:0 16px 40px rgba(0,0,0,0.45),0 0 0 1px rgba(0,43,127,0.2);}
+.card-img{width:100%;height:150px;overflow:hidden;background:var(--navy2);position:relative;flex-shrink:0;}
+.card-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.75) saturate(0.65);transition:filter .4s,transform .4s;}
+.card:hover .card-img img{filter:brightness(0.9) saturate(0.85);transform:scale(1.06);}
+.card-cat-tag{position:absolute;bottom:8px;left:8px;background:rgba(10,22,40,0.88);border:1px solid rgba(45,212,191,0.3);border-radius:50px;padding:3px 9px;font-size:9px;font-weight:600;letter-spacing:2px;color:var(--teal);text-transform:uppercase;backdrop-filter:blur(4px);}
+.card-badge{position:absolute;top:8px;right:8px;border-radius:50px;padding:3px 9px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+.bh{background:rgba(245,166,35,0.18);border:1px solid rgba(245,166,35,0.4);color:var(--orange);}
+.bn{background:rgba(45,212,191,0.13);border:1px solid rgba(45,212,191,0.35);color:var(--teal);}
+.br{background:rgba(176,196,160,0.12);border:1px solid rgba(176,196,160,0.3);color:#B0C4A0;}
+.bg{background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.4);color:#C4B5FD;}
+.card-body{padding:13px 14px;flex:1;display:flex;flex-direction:column;gap:5px;}
+.card-sku{font-family:'Space Grotesk',monospace;font-size:9px;color:var(--teal);letter-spacing:1.5px;opacity:0.65;}
+.card-name{font-size:13px;font-weight:600;color:var(--cr-white);line-height:1.35;}
+.card-brief{font-size:11.5px;color:var(--gray);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.card-foot{padding:10px 14px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.card-cta{font-size:11px;font-weight:600;color:var(--orange);display:flex;align-items:center;gap:3px;transition:gap .2s;}
+.card:hover .card-cta{gap:7px;}
+.card-brand{font-size:10px;color:var(--gray);opacity:0.6;}
 
-/* ── TABLE ── */
-.product-table{width:100%;border-collapse:collapse;margin-bottom:52px;}
-.product-table thead tr{border-bottom:2px solid rgba(45,212,191,0.2);}
-.product-table thead th{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;padding:0 16px 14px;text-align:left;font-weight:500;}
-.product-table thead th:last-child{text-align:right;}
-.product-table tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background .2s;}
-.product-table tbody tr:hover{background:rgba(45,212,191,0.04);}
-.product-table td{padding:17px 16px;vertical-align:middle;}
-.td-sku{font-family:'DM Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:1px;white-space:nowrap;width:145px;opacity:.75;}
-.td-name{font-size:14px;font-weight:500;color:var(--white);line-height:1.45;}
-.td-name .specs{display:block;font-size:12px;color:var(--dim);font-weight:300;margin-top:3px;}
-.td-desc{font-size:12.5px;color:var(--dark-text);}
-.td-tag{text-align:right;white-space:nowrap;}
-.tag{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;padding:4px 10px;border:1px solid;text-transform:uppercase;border-radius:2px;}
-.tag-hot  {color:var(--orange);border-color:rgba(245,166,35,.45);background:rgba(245,166,35,.08);}
-.tag-new  {color:var(--teal);border-color:rgba(45,212,191,.35);background:rgba(45,212,191,.07);}
-.tag-ref  {color:#B0C4A0;border-color:rgba(176,196,160,.35);background:rgba(176,196,160,.06);}
-.tag-pro  {color:var(--dim);border-color:rgba(138,155,184,.3);background:transparent;}
+/* MODAL */
+.mo{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:1000;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px);}
+.mo.open{opacity:1;pointer-events:all;}
+@media(min-width:600px){.mo{align-items:center;}}
+.modal{background:var(--navy2);border:1.5px solid rgba(0,43,127,0.4);border-radius:20px 20px 0 0;max-width:520px;width:100%;max-height:92vh;overflow-y:auto;transform:translateY(40px);transition:transform .35s cubic-bezier(0.16,1,0.3,1);position:relative;}
+@media(min-width:600px){.modal{border-radius:20px;transform:scale(0.92);}}
+.mo.open .modal{transform:translateY(0);}
+@media(min-width:600px){.mo.open .modal{transform:scale(1);}}
+.modal-handle{width:36px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:12px auto 0;display:block;}
+@media(min-width:600px){.modal-handle{display:none;}}
+.modal-img{width:100%;height:200px;object-fit:cover;border-radius:0;}
+@media(min-width:600px){.modal-img{border-radius:18px 18px 0 0;}}
+.modal-body{padding:20px;}
+.modal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.modal-cat{font-size:10px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;font-weight:600;}
+.modal-sku{font-family:'Space Grotesk',monospace;font-size:10px;color:var(--gray);}
+.modal-name{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:16px;line-height:1.25;}
+.specs-grid{display:grid;gap:8px;margin-bottom:20px;}
+.spec{display:flex;gap:10px;padding:10px 12px;background:rgba(255,255,255,0.04);border-radius:8px;border-left:2px solid var(--cr-blue);}
+.spec-k{font-size:11px;color:var(--gray);min-width:88px;flex-shrink:0;padding-top:1px;font-weight:500;}
+.spec-v{font-size:13px;color:var(--cr-white);font-weight:500;line-height:1.35;}
+.modal-btns{display:flex;gap:10px;}
+.btn-wa{flex:1;background:var(--cr-red);color:white;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;padding:14px;border-radius:50px;border:none;cursor:pointer;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;}
+.btn-wa:hover{background:#a80e1e;transform:scale(1.02);}
+.btn-close{background:rgba(255,255,255,0.06);color:var(--cr-white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;padding:14px 18px;border-radius:50px;border:1.5px solid var(--border);cursor:pointer;transition:all .2s;}
+.btn-close:hover{border-color:var(--teal);color:var(--teal);}
+.mc{position:absolute;top:14px;right:14px;background:rgba(0,0,0,0.5);border:none;border-radius:50%;width:32px;height:32px;color:white;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:10;}
 
-/* ── CARDS ── */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-bottom:52px;}
-.pcard{background:var(--navy-lt);border:1px solid rgba(255,255,255,.07);border-radius:6px;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;}
-.pcard:hover{border-color:rgba(245,166,35,.5);transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.5),0 0 0 1px rgba(245,166,35,.15);}
-.pcard-img{width:100%;height:150px;overflow:hidden;background:var(--navy-mid);display:flex;align-items:center;justify-content:center;}
-.pcard-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.55) brightness(.75);transition:filter .4s,transform .4s;}
-.pcard:hover .pcard-img img{filter:saturate(.85) brightness(.9);transform:scale(1.05);}
-.pcard-body{padding:20px 20px 18px;}
-.pcard-sku{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--teal);margin-bottom:8px;opacity:.75;}
-.pcard-name{font-size:14px;font-weight:600;color:var(--white);line-height:1.4;margin-bottom:6px;}
-.pcard-spec{font-size:12px;color:var(--dim);line-height:1.55;font-weight:300;}
-.pcard-foot{display:flex;align-items:center;justify-content:space-between;padding:12px 20px 14px;border-top:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.2);}
-.pcard-badge{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;}
-.pcard-cta{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--dim2);cursor:pointer;transition:color .2s;}
-.pcard:hover .pcard-cta{color:var(--orange);}
-.pcard.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--orange));}
+/* EMPTY */
+.empty{display:none;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;gap:12px;}
+.empty.show{display:flex;}
+.empty-icon{font-size:52px;opacity:0.25;}
+.empty h3{font-size:17px;font-weight:600;color:var(--gray-lt);}
+.empty p{font-size:13px;color:var(--gray);}
 
-/* ── INNER DIVIDER ── */
-.inner-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.15),transparent);margin:40px 0;}
+/* FOOTER */
+footer{background:var(--navy2);border-top:3px solid transparent;border-image:linear-gradient(90deg,var(--cr-blue) 33%,var(--cr-white) 33% 66%,var(--cr-red) 66%) 1;padding:48px 20px 40px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;letter-spacing:4px;margin-bottom:4px;}
+.footer-sub{font-size:10px;letter-spacing:4px;color:var(--gray);text-transform:uppercase;margin-bottom:28px;}
+.contact-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+.chip{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:50px;padding:11px 18px;text-decoration:none;transition:border-color .2s;}
+.chip:hover{border-color:var(--teal);}
+.chip-icon{font-size:16px;}
+.chip-label{font-size:9px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;display:block;margin-bottom:2px;}
+.chip-val{font-size:13px;font-weight:600;color:var(--cr-white);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-bottom span{font-size:10px;color:var(--gray);letter-spacing:1px;}
 
-/* ── HIGHLIGHT ── */
-.highlight-strip{background:linear-gradient(135deg,rgba(45,212,191,.07) 0%,rgba(245,166,35,.04) 100%);border:1px solid rgba(45,212,191,.18);border-radius:6px;padding:28px 32px;margin-bottom:52px;display:flex;align-items:center;gap:24px;}
-.hs-icon{font-size:32px;flex-shrink:0;}
-.hs-text h4{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--orange);margin-bottom:5px;}
-.hs-text p{font-size:13px;color:var(--dim);line-height:1.6;}
-
-/* ── CONTACT ── */
-.contact-section{background:var(--navy-dk);border-top:2px solid rgba(245,166,35,.25);padding:100px 80px 80px;position:relative;overflow:hidden;}
-.contact-section::before{content:'';position:absolute;bottom:-150px;right:-150px;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.06) 0%,transparent 60%);pointer-events:none;}
-.contact-section::after{content:'';position:absolute;top:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,.04) 0%,transparent 60%);pointer-events:none;}
-.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:100px;align-items:start;position:relative;z-index:1;}
-.contact-brand{font-family:'DM Sans',sans-serif;font-size:52px;font-weight:700;letter-spacing:6px;line-height:1;margin-bottom:6px;}
-.contact-brand .it{color:var(--teal);}
-.contact-brand .now{color:var(--white);}
-.contact-brand .cr{color:var(--orange);}
-.contact-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:5px;color:var(--dim2);margin-bottom:28px;text-transform:uppercase;}
-.contact-desc{font-size:14px;color:var(--dim);line-height:1.8;max-width:380px;}
-.contact-items{display:flex;flex-direction:column;gap:0;}
-.ci{display:flex;align-items:center;gap:20px;padding:22px 24px;border-bottom:1px solid rgba(255,255,255,.05);transition:background .2s;border-radius:4px;}
-.ci:hover{background:rgba(45,212,191,.04);}
-.ci-icon{width:42px;height:42px;border:1px solid rgba(245,166,35,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:rgba(245,166,35,.07);}
-.ci-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--teal);display:block;margin-bottom:4px;text-transform:uppercase;}
-.ci-value{font-size:15px;font-weight:600;color:var(--white);}
-.footer-bottom{max-width:1100px;margin:60px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.footer-bottom span{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--dim2);text-transform:uppercase;}
-.footer-bottom .footer-brand{color:var(--teal);opacity:.6;}
-
-/* ── CTA BUTTON STYLE (decorative in footer) ── */
-.cta-btn{display:inline-block;background:var(--orange);color:var(--navy-dk);font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;padding:12px 28px;border-radius:50px;letter-spacing:1px;margin-top:28px;text-decoration:none;transition:background .2s,transform .2s;}
-.cta-btn:hover{background:var(--orange-lt);transform:translateY(-2px);}
-
-@media(max-width:900px){
-  nav{padding:14px 20px;}
-  .nav-links{display:none;}
-  .section-hero{height:250px;}
-  .hero-content{padding:0 24px 36px;}
-  .products-wrap{padding:44px 20px;}
-  .contact-inner{grid-template-columns:1fr;gap:44px;}
-  .contact-section{padding:60px 20px 44px;}
-  .card-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
+/* RESPONSIVE */
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr 1fr;}
+  .card-img{height:120px;}
+  .card-name{font-size:12px;}
+  .modal-btns{flex-direction:column;}
 }
+@media(max-width:360px){.grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo"><span class="it">IT</span><span class="now">now</span><span class="cr">CR</span></div>
-  <ul class="nav-links">
-    <li><a href="#laptops">Laptops</a></li>
-    <li><a href="#desktops">Desktops</a></li>
-    <li><a href="#monitores">Monitores</a></li>
-    <li><a href="#redes">Redes</a></li>
-    <li><a href="#seguridad">Seguridad</a></li>
-    <li><a href="#energia">Energía</a></li>
-    <li><a href="#software">Software</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
+  <div class="logo">
+    <img class="logo-img" src="https://www.itnowcr.com/favicon.ico" alt="ITnowCR" onerror="this.style.display='none'">
+    <span><span class="l-it">IT</span><span class="l-now">now</span><span class="l-cr">CR</span></span>
+  </div>
+  <div class="nav-right">Catálogo 2026</div>
 </nav>
 
-<!-- COVER -->
-<section class="cover">
-  <div class="cover-bg"></div>
-  <div class="cover-grid"></div>
-  <div class="cover-dots"></div>
-  <div class="cover-logo-wrap">
-    <div class="cover-logo-ring">
-      <div class="glow-ring"></div>
-      <img src="/mnt/user-data/uploads/3feba349-1824-4937-8fa6-95d0a316588b.JPG" alt="ITnowCR" onerror="this.style.display='none'">
-    </div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="cr-flag-stripe"><div class="stripe s-blue"></div><div class="stripe s-white"></div><div class="stripe s-red"></div><div class="stripe s-white"></div><div class="stripe s-blue"></div></div>
+    <h1>Tecnología de <span class="accent">primer nivel</span><br>para tu empresa</h1>
+    <p>Dell · HP · Lenovo · Asus · Samsung · Hikvision · Kingston y más. Toca cualquier producto para cotizar.</p>
   </div>
-  <div class="cover-content">
-    <div class="cover-brand"><span class="it">IT</span><span class="now">now</span><span class="cr">CR</span></div>
-    <div class="cover-sub">Smart Solutions</div>
-    <div class="cover-rule"></div>
-    <div class="cover-catalog-label">Catálogo de Productos</div>
-    <div class="cover-date">Mayo 2026 &ensp;·&ensp; Lista Actualizada</div>
-  </div>
-  <div class="cover-scroll-hint">
-    <span>Explorar</span>
-    <div class="scroll-arrow"></div>
-  </div>
-</section>
+</div>
 
-<!-- ══════════ LAPTOPS ══════════ -->
-<section id="laptops">
-  <div class="section-hero">
-    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1400&h=500&fit=crop&q=80" alt="Laptops">
-    <div class="hero-overlay"></div><div class="hero-overlay-left"></div>
-    <div class="hero-content">
-      <span class="hero-num">01 — COMPUTADORAS PORTÁTILES</span>
-      <h2 class="hero-title">Laptops &amp; <em>Portátiles</em></h2>
-      <p class="hero-desc">Productividad profesional y alto rendimiento. Intel Core Ultra, i5, i7, AMD Ryzen y opciones refurbished certificadas.</p>
-    </div>
-    <div class="hero-bar"></div>
+<div class="search-section">
+  <div class="search-box">
+    <span class="s-icon">🔍</span>
+    <input type="text" id="si" placeholder="Buscar por nombre, marca, código...">
+    <button class="s-clear" id="sc">✕</button>
   </div>
-  <div class="products-wrap">
-    <div class="highlight-strip">
-      <span class="hs-icon">⚡</span>
-      <div class="hs-text">
-        <h4>Intel Core Ultra — Nueva Generación con IA Integrada</h4>
-        <p>Mayor eficiencia energética, NPU para inteligencia artificial y Thunderbolt 4. Diseñados para profesionales que exigen lo mejor.</p>
-      </div>
-    </div>
+</div>
 
-    <div class="cat-label">Ultra Series — Intel Core Ultra 7</div>
-    <div class="card-grid">
-      <div class="pcard featured">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&h=200&fit=crop" alt="Dell Pro Silver"></div>
-        <div class="pcard-body">
-          <div class="pcard-sku">ITN-LAP-001</div>
-          <div class="pcard-name">Dell Pro Silver 14</div>
-          <div class="pcard-spec">Core Ultra 7 255U · 16GB · 512GB SSD · Windows 11 Pro · 3 años</div>
-        </div>
-        <div class="pcard-foot"><span class="pcard-badge">★ Destacado</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-      <div class="pcard featured">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400&h=200&fit=crop" alt="Dynabook Portege"></div>
-        <div class="pcard-body">
-          <div class="pcard-sku">ITN-LAP-002</div>
-          <div class="pcard-name">Dynabook Portégé X30W-K Touch</div>
-          <div class="pcard-spec">Core Ultra 7 165H · 32GB · 512GB SSD · 13.3" Táctil · W11 Pro</div>
-        </div>
-        <div class="pcard-foot"><span class="pcard-badge">★ Premium</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-      <div class="pcard featured">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=200&fit=crop" alt="Dynabook Tecra A60"></div>
-        <div class="pcard-body">
-          <div class="pcard-sku">ITN-LAP-003</div>
-          <div class="pcard-name">Dynabook Tecra A60-M 16"</div>
-          <div class="pcard-spec">Core Ultra 7 255H · 16GB · 512GB SSD · W11 Pro · 3 años garantía</div>
-        </div>
-        <div class="pcard-foot"><span class="pcard-badge">★ Corporativo</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-      <div class="pcard featured">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=400&h=200&fit=crop" alt="Lenovo ThinkPad T14"></div>
-        <div class="pcard-body">
-          <div class="pcard-sku">ITN-LAP-004</div>
-          <div class="pcard-name">Lenovo ThinkPad T14</div>
-          <div class="pcard-spec">Core Ultra 7 155U · 16GB · 512GB SSD · 14" · Windows 11 Pro</div>
-        </div>
-        <div class="pcard-foot"><span class="pcard-badge">★ Empresarial</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-    </div>
+<div class="filters-section">
+  <div class="filters" id="filters">
+    <button class="fb active" data-cat="all">Todos</button>
+    <button class="fb" data-cat="laptop">💻 Laptops</button>
+    <button class="fb" data-cat="desktop">🖥️ Desktops</button>
+    <button class="fb" data-cat="tableta">📱 Tabletas</button>
+    <button class="fb" data-cat="monitor">📺 Monitores</button>
+    <button class="fb" data-cat="proyector">📽️ Proyectores</button>
+    <button class="fb" data-cat="impresora">🖨️ Impresoras</button>
+    <button class="fb" data-cat="tinta">🖋️ Tinta/Tóner</button>
+    <button class="fb" data-cat="red">🌐 Redes</button>
+    <button class="fb" data-cat="camara">📷 Cámaras</button>
+    <button class="fb" data-cat="ups">⚡ UPS</button>
+    <button class="fb" data-cat="software">🔑 Software</button>
+    <button class="fb" data-cat="storage">💾 Almacenamiento</button>
+    <button class="fb" data-cat="componente">⚙️ Componentes</button>
+    <button class="fb" data-cat="periferico">🖱️ Periféricos</button>
+    <button class="fb" data-cat="pdv">🏪 Punto de Venta</button>
+    <button class="fb" data-cat="tv">📡 TV</button>
+    <button class="fb" data-cat="accesorio">🔌 Accesorios</button>
+  </div>
+</div>
 
-    <div class="inner-divider"></div>
-    <div class="cat-label">Intel Core i5 — Productividad Profesional</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-LAP-101</td><td class="td-name">HP ProBook 4 G1IR 16"<span class="specs">i5-120U · 16GB · 512SSD · W11 Pro · Español</span></td><td class="td-desc">Portátil profesional 16 pulgadas</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-102</td><td class="td-name">HP ProBook 4 G1IR 14"<span class="specs">i5-120U · 16GB · 512SSD · W11 Pro · Español</span></td><td class="td-desc">Portátil profesional 14 pulgadas</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-103</td><td class="td-name">HP 15-FD0250LA<span class="specs">i5-1334U · 8GB · 512SSD · W11 · Azul Oscuro · 15.6"</span></td><td class="td-desc">Uso cotidiano versátil</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-104</td><td class="td-name">Dell 15 ESP Windows 11<span class="specs">i5-1334U · 8GB · 512SSD · 15.6" Plata</span></td><td class="td-desc">Confiable y versátil</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-105</td><td class="td-name">Dynabook Tecra A40-K<span class="specs">i5-1334U · 16GB · 512SSD · 14" · W11 Pro · 3YR</span></td><td class="td-desc">Corporativo garantía extendida</td><td class="td-tag"><span class="tag tag-new">Corporativo</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-106</td><td class="td-name">Lenovo IdeaPad Slim 3<span class="specs">i5-13420H · 8GB · 512SSD · 15.3" · W11</span></td><td class="td-desc">Diseño delgado y ligero</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-107</td><td class="td-name">Asus VivoBook 14<span class="specs">i5-1334U · 12GB · 256SSD · 14" · W11 · Azul</span></td><td class="td-desc">Compacto y eficiente</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-108</td><td class="td-name">Dell Latitude 5420 Refurb<span class="specs">i5-1135G7 · 8GB · 256SSD · 14" · W10 Pro</span></td><td class="td-desc">Opción económica certificada</td><td class="td-tag"><span class="tag tag-ref">Refurb</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-109</td><td class="td-name">VAIO Refurb 14"<span class="specs">i5-1235U · 8GB · 512SSD · W11 · Negro</span></td><td class="td-desc">Marca premium refurbished</td><td class="td-tag"><span class="tag tag-ref">Refurb</span></td></tr>
-      </tbody>
-    </table>
+<div class="results-row"><div class="count"><b id="cn">0</b> productos</div></div>
+<div class="grid-section">
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty"><div class="empty-icon">🔍</div><h3>Sin resultados</h3><p>Intenta con otro término o categoría</p></div>
+</div>
 
-    <div class="inner-divider"></div>
-    <div class="cat-label">Intel Core i7 — Alto Rendimiento</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-LAP-201</td><td class="td-name">Lenovo ThinkPad E16<span class="specs">i7-240H · 16GB · 512SSD · 16" · W11 Pro</span></td><td class="td-desc">Alto rendimiento empresarial</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-202</td><td class="td-name">Dell 15 Touch<span class="specs">i7-1355U · 16GB · 1TB SSD · 15.6" · W11</span></td><td class="td-desc">Pantalla táctil incluida</td><td class="td-tag"><span class="tag tag-new">Con Táctil</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-203</td><td class="td-name">Dynabook Sat Pro C50-K<span class="specs">i7-1355U · 16GB · 512SSD · 15.6" · Sin OS</span></td><td class="td-desc">Gran disponibilidad</td><td class="td-tag"><span class="tag tag-hot">Gran Stock</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-204</td><td class="td-name">Asus VivoBook 14 i7<span class="specs">i7-1355U · 12GB · 512SSD · 14" · W11</span></td><td class="td-desc">Potencia en formato compacto</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-205</td><td class="td-name">Dell Alienware 16 Gaming<span class="specs">i7-240H · 16GB · 1TB SSD · RTX 5050 8GB · 16"</span></td><td class="td-desc">Gaming de alta gama</td><td class="td-tag"><span class="tag tag-new">Gaming</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-206</td><td class="td-name">VAIO Refurb 14.1"<span class="specs">i7-1255U · 16GB · 1TB SSD · W11 · Plata</span></td><td class="td-desc">Premium refurbished certificado</td><td class="td-tag"><span class="tag tag-ref">Refurb</span></td></tr>
-      </tbody>
-    </table>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="l-it">IT</span><span class="l-now">now</span><span class="l-cr">CR</span></div>
+    <div class="footer-sub">Smart Solutions · Costa Rica</div>
+    <div class="contact-chips">
+      <a href="https://wa.me/50684866927" class="chip" target="_blank"><span class="chip-icon">💬</span><div><span class="chip-label">WhatsApp</span><span class="chip-val">+506 8486-6927</span></div></a>
+      <a href="mailto:ventas@itnowcr.com" class="chip"><span class="chip-icon">✉️</span><div><span class="chip-label">Correo</span><span class="chip-val">ventas@itnowcr.com</span></div></a>
+      <a href="https://www.itnowcr.com" class="chip" target="_blank"><span class="chip-icon">🌐</span><div><span class="chip-label">Web</span><span class="chip-val">www.itnowcr.com</span></div></a>
+    </div>
+    <div class="footer-bottom"><span>© 2026 ITnowCR Smart Solutions · Costa Rica</span><span>Precios disponibles a solicitud</span></div>
+  </div>
+</footer>
 
-    <div class="inner-divider"></div>
-    <div class="cat-label">AMD Ryzen — Precio-Rendimiento</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-LAP-301</td><td class="td-name">Lenovo ThinkPad E16 AMD<span class="specs">Ryzen 5 7535U · 8GB · 256SSD · 16" · W11 Pro</span></td><td class="td-desc">Rendimiento AMD empresarial</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-302</td><td class="td-name">HP 15 Touch AMD<span class="specs">Ryzen 5 7520U · 8GB · 1TB SSD · 15.6"</span></td><td class="td-desc">Táctil con gran almacenamiento</td><td class="td-tag"><span class="tag tag-new">Con Táctil</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-303</td><td class="td-name">Lenovo IdeaPad Slim 3 Touch<span class="specs">Ryzen 5 7520U · 8GB · 512SSD · 15.6"</span></td><td class="td-desc">Táctil y delgado</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-304</td><td class="td-name">HP Victus Gaming<span class="specs">Ryzen 7 7445HS · 16GB · 512SSD · RTX 4050 6GB</span></td><td class="td-desc">Gaming asequible</td><td class="td-tag"><span class="tag tag-new">Gaming</span></td></tr>
-        <tr><td class="td-sku">ITN-LAP-305</td><td class="td-name">HP OMEN Gaming<span class="specs">Ryzen AI 7 350 · 16GB · 1TB · RTX 5060 8GB · 16"</span></td><td class="td-desc">Gaming última generación</td><td class="td-tag"><span class="tag tag-hot">Top Gaming</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════ DESKTOPS ══════════ -->
-<section id="desktops">
-  <div class="section-hero">
-    <img src="https://images.unsplash.com/photo-1593640408182-31c228f81b2e?w=1400&h=500&fit=crop&q=80" alt="Desktops">
-    <div class="hero-overlay"></div><div class="hero-overlay-left"></div>
-    <div class="hero-content">
-      <span class="hero-num">02 — COMPUTADORAS DE ESCRITORIO</span>
-      <h2 class="hero-title">Desktops &amp; <em>Mini PCs</em></h2>
-      <p class="hero-desc">Soluciones compactas y de torre para la oficina. Dell, HP, Lenovo y Mini PCs Asus NUC con procesadores de última generación.</p>
-    </div>
-    <div class="hero-bar"></div>
-  </div>
-  <div class="products-wrap">
-    <div class="cat-label">Intel Core i5 — Escritorio Profesional</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-DSK-101</td><td class="td-name">Dell Pro MFF i5-14500T<span class="specs">8GB · 512SSD · W11 Pro · 3 años · Mini Form Factor</span></td><td class="td-desc">Ultra compacto para escritorio</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-102</td><td class="td-name">Dell Pro Slim i5-14500<span class="specs">8GB · 512SSD · W11 Pro · 3 años</span></td><td class="td-desc">Diseño delgado para escritorio</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-103</td><td class="td-name">HP ProDesk 280 G9 SFF<span class="specs">i5-12500 · 16GB · 512SSD · W11 Pro · Negro</span></td><td class="td-desc">Gran stock disponible</td><td class="td-tag"><span class="tag tag-hot">Gran Stock</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-104</td><td class="td-name">HP Pro 260 G9 MFF<span class="specs">i5-1334U · 16GB · 512SSD · W11 Pro</span></td><td class="td-desc">Mini compacto HP</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-105</td><td class="td-name">Lenovo Neo 50Q Tiny<span class="specs">i5-13420H · 16GB · 512SSD · W11 Pro</span></td><td class="td-desc">Tiny PC Lenovo</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-106</td><td class="td-name">Dell Refurb 7090 UFF 256GB<span class="specs">i5-1145G7 · 16GB · W11 Pro · 2 años</span></td><td class="td-desc">Refurbished certificado</td><td class="td-tag"><span class="tag tag-ref">Refurb</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-107</td><td class="td-name">Dell Refurb 7090 UFF 512GB<span class="specs">i5-1145G7 · 16GB · W11 Pro · 2 años</span></td><td class="td-desc">Mayor almacenamiento</td><td class="td-tag"><span class="tag tag-ref">Refurb</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Intel Core i7 & Mini PCs Asus NUC</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-DSK-201</td><td class="td-name">Dell Pro MFF i7-14700T<span class="specs">16GB · 512SSD · W11 Pro · 3YR</span></td><td class="td-desc">Máxima potencia en formato mini</td><td class="td-tag"><span class="tag tag-hot">Premium</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-202</td><td class="td-name">Dell Pro Slim i7-14700<span class="specs">8GB · 512SSD · FreeDOS</span></td><td class="td-desc">Torre slim alto rendimiento</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-203</td><td class="td-name">NUC Asus Core Ultra 7 155H<span class="specs">1.40-4.80GHz · 2×DDR5 SODIMM · M.2 + 2.5"</span></td><td class="td-desc">Sin RAM/SSD — personalizable</td><td class="td-tag"><span class="tag tag-new">Core Ultra</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-204</td><td class="td-name">NUC Asus i5-1340P<span class="specs">3.40-4.60GHz · 2×DDR4 SODIMM · M.2</span></td><td class="td-desc">Sin RAM/SSD — personalizable</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-205</td><td class="td-name">Mini PC Asus Core 3-100U<span class="specs">1.20-4.70GHz · 2×DDR5 SODIMM · M.2</span></td><td class="td-desc">Compacto y moderno</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-DSK-206</td><td class="td-name">Lenovo M75Q Tiny AMD<span class="specs">Ryzen 5 Pro 5650GE · 8GB · 512SSD · Sin OS</span></td><td class="td-desc">Tiny PC con AMD</td><td class="td-tag"><span class="tag tag-pro">AMD</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════ MONITORES ══════════ -->
-<section id="monitores">
-  <div class="section-hero">
-    <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1400&h=500&fit=crop&q=80" alt="Monitores">
-    <div class="hero-overlay"></div><div class="hero-overlay-left"></div>
-    <div class="hero-content">
-      <span class="hero-num">03 — PANTALLAS</span>
-      <h2 class="hero-title">Monitores &amp; <em>Displays</em></h2>
-      <p class="hero-desc">Gaming de alta frecuencia, monitores profesionales IPS, curvos, Smart TV 4K y pantallas portátiles para trabajo en movimiento.</p>
-    </div>
-    <div class="hero-bar"></div>
-  </div>
-  <div class="products-wrap">
-    <div class="cat-label">Gaming — Alta Frecuencia</div>
-    <div class="card-grid">
-      <div class="pcard featured">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=400&h=200&fit=crop" alt="ASUS ROG"></div>
-        <div class="pcard-body"><div class="pcard-sku">ITN-MON-001</div><div class="pcard-name">ASUS ROG Strix 27" QHD</div><div class="pcard-spec">280Hz · IPS · DisplayPort / HDMI / USB-C</div></div>
-        <div class="pcard-foot"><span class="pcard-badge">★ Gaming Pro</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-      <div class="pcard">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=400&h=200&fit=crop" alt="Samsung QHD"></div>
-        <div class="pcard-body"><div class="pcard-sku">ITN-MON-002</div><div class="pcard-name">Samsung 32" QHD Gaming</div><div class="pcard-spec">180Hz · HDMI / DisplayPort</div></div>
-        <div class="pcard-foot"><span class="pcard-badge">Gran Stock</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-      <div class="pcard">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1545231027-637d2f6210f8?w=400&h=200&fit=crop" alt="ASUS TUF"></div>
-        <div class="pcard-body"><div class="pcard-sku">ITN-MON-003</div><div class="pcard-name">ASUS TUF 23.8" FHD</div><div class="pcard-spec">180Hz · FHD · DisplayPort / HDMI</div></div>
-        <div class="pcard-foot"><span class="pcard-badge">Gaming</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-      <div class="pcard">
-        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1551645120-d70bfe84c826?w=400&h=200&fit=crop" alt="AOC Gaming"></div>
-        <div class="pcard-body"><div class="pcard-sku">ITN-MON-004</div><div class="pcard-name">AOC Gaming 24" G2490VX</div><div class="pcard-spec">144Hz · FHD · DP / HDMI · Negro/Rojo</div></div>
-        <div class="pcard-foot"><span class="pcard-badge">Gaming</span><span class="pcard-cta">Consultar →</span></div>
-      </div>
-    </div>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Profesional & Oficina</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-MON-101</td><td class="td-name">BenQ 24" GW2491 IPS<span class="specs">100Hz FHD · DP/HDMI · 3 años garantía</span></td><td class="td-desc">Más vendido — gran stock</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-102</td><td class="td-name">BenQ 27" GW2791 IPS<span class="specs">100Hz FHD · DP/HDMI · 3 años garantía</span></td><td class="td-desc">Gran pantalla para productividad</td><td class="td-tag"><span class="tag tag-hot">Gran Stock</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-103</td><td class="td-name">Dell Pro 27" E2725HM IPS<span class="specs">100Hz FHD · VGA/HDMI/DP · 3 años</span></td><td class="td-desc">Monitor profesional Dell</td><td class="td-tag"><span class="tag tag-new">Dell Pro</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-104</td><td class="td-name">Dell 23.8" E2425HSM IPS<span class="specs">100Hz FHD · VGA/HDMI/DP · 3 años</span></td><td class="td-desc">Estaciones de trabajo</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-105</td><td class="td-name">Acer 27" EK271 FHD IPS<span class="specs">HDMI · Negro</span></td><td class="td-desc">Confiable y económico</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-106</td><td class="td-name">AOC 27" 27B30H IPS<span class="specs">100Hz FHD · VGA/HDMI</span></td><td class="td-desc">Amplio y eficiente</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-107</td><td class="td-name">Samsung Smart 32" 4K<span class="specs">60Hz · HDMI/USB-C/WiFi · IA Integrada</span></td><td class="td-desc">Smart TV y monitor en uno</td><td class="td-tag"><span class="tag tag-new">Smart 4K</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-108</td><td class="td-name">HP 527SH 27" IPS FHD<span class="specs">100Hz · VGA/HDMI</span></td><td class="td-desc">Monitor HP confiable</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">X-Micro & Samsung Curvos — Mejor Precio</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-MON-201</td><td class="td-name">X-Micro 24" X24KN<span class="specs">75Hz FHD · VGA/HDMI · Negro</span></td><td class="td-desc">Relación precio-valor inmejorable</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-202</td><td class="td-name">X-Micro 22" X22KN<span class="specs">75Hz FHD · VGA/HDMI · Negro</span></td><td class="td-desc">Compacto y económico</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-203</td><td class="td-name">X-Micro 27" Curvo X27CFE<span class="specs">120Hz FHD · VGA/HDMI</span></td><td class="td-desc">Curvo gaming económico</td><td class="td-tag"><span class="tag tag-hot">Gran Stock</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-204</td><td class="td-name">X-Micro 27" X27KN<span class="specs">75Hz FHD · VGA/HDMI</span></td><td class="td-desc">27" para trabajo y entretenimiento</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-205</td><td class="td-name">Samsung 24" S24D366 Curvo<span class="specs">100Hz FHD · HDMI/VGA</span></td><td class="td-desc">Curvo Samsung premium</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-206</td><td class="td-name">Samsung 27" S27D366 Curvo<span class="specs">100Hz FHD · HDMI/VGA</span></td><td class="td-desc">Curvo 27" Samsung</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-MON-207</td><td class="td-name">X-Micro Portátil 15.6" Touch<span class="specs">IPS FHD · Mini HDMI/USB-C · Con funda</span></td><td class="td-desc">Ideal para trabajo móvil</td><td class="td-tag"><span class="tag tag-new">Portátil</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════ REDES ══════════ -->
-<section id="redes">
-  <div class="section-hero">
-    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&h=500&fit=crop&q=80" alt="Networking">
-    <div class="hero-overlay"></div><div class="hero-overlay-left"></div>
-    <div class="hero-content">
-      <span class="hero-num">04 — NETWORKING</span>
-      <h2 class="hero-title">Redes &amp; <em>Conectividad</em></h2>
-      <p class="hero-desc">Routers WiFi 6, switches administrables y POE, access points Ubiquiti, cable UTP Cat6 y expandidores de señal.</p>
-    </div>
-    <div class="hero-bar"></div>
-  </div>
-  <div class="products-wrap">
-    <div class="cat-label">Routers WiFi 6</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-NET-101</td><td class="td-name">Netis NX62 AX6000 WiFi 6<span class="specs">Dual Band 2.4-5GHz · 4 Antenas · Multi-Mode</span></td><td class="td-desc">Máximo rendimiento WiFi 6</td><td class="td-tag"><span class="tag tag-hot">Top Pick</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-102</td><td class="td-name">Netis NX31 AX3000 WiFi 6<span class="specs">Dual Band · 4 Antenas · Multi-Mode</span></td><td class="td-desc">Rendimiento balanceado</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-103</td><td class="td-name">Netis NX10 AX1500 WiFi 6<span class="specs">Dual Band · 4 Antenas</span></td><td class="td-desc">Opción económica WiFi 6</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-104</td><td class="td-name">Dahua AX18 AX1800 WiFi 6<span class="specs">Dual Band · 4 Antenas · Negro</span></td><td class="td-desc">Gran disponibilidad de stock</td><td class="td-tag"><span class="tag tag-hot">Gran Stock</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-105</td><td class="td-name">Linksys MR7350 Mesh AX1800<span class="specs">WiFi 6 · Dual Band · Sistema Mesh</span></td><td class="td-desc">Cobertura total en toda la empresa</td><td class="td-tag"><span class="tag tag-new">Mesh</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-106</td><td class="td-name">TP-Link Deco X50 Outdoor<span class="specs">AX3000 WiFi 6 · Resistente intemperie</span></td><td class="td-desc">Para instalaciones exteriores</td><td class="td-tag"><span class="tag tag-new">Outdoor</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-107</td><td class="td-name">Netis MW5360 LTE 4G<span class="specs">300Mbps Dual Band · 4 Antenas · SIM</span></td><td class="td-desc">Internet donde no hay fibra</td><td class="td-tag"><span class="tag tag-new">4G LTE</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Switches — Dahua, Netis, Aruba</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-NET-201</td><td class="td-name">Dahua 8pts 10/100<span class="specs">PFS3008-8ET-L · No Administrable</span></td><td class="td-desc">Básico para pequeñas redes</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-202</td><td class="td-name">Dahua 10pts POE 65W<span class="specs">PFS3010-8ET-65W · 8 puertos POE</span></td><td class="td-desc">Ideal para cámaras y APs</td><td class="td-tag"><span class="tag tag-hot">POE</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-203</td><td class="td-name">Dahua 10pts Gigabit POE 96W<span class="specs">PFS3010-8GT-96 · 8 POE Gigabit</span></td><td class="td-desc">Gigabit con alimentación POE</td><td class="td-tag"><span class="tag tag-new">Gigabit POE</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-204</td><td class="td-name">Dahua 16pts Gigabit<span class="specs">S3016-16GT · No Administrable</span></td><td class="td-desc">Para redes medianas</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-205</td><td class="td-name">Dahua 24pts Gigabit<span class="specs">S3024-24GT · No Administrable</span></td><td class="td-desc">Para redes empresariales</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-206</td><td class="td-name">Dahua SG1050 50pts Gigabit<span class="specs">No Administrable · Alta densidad</span></td><td class="td-desc">Instalaciones de gran escala</td><td class="td-tag"><span class="tag tag-new">50 Puertos</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-207</td><td class="td-name">Dahua CS4218 Cloud Admin.<span class="specs">18pts · 16 POE · 190W · Nube</span></td><td class="td-desc">Gestión remota desde app</td><td class="td-tag"><span class="tag tag-new">Cloud Admin</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-208</td><td class="td-name">Aruba JL428A 48pts POE<span class="specs">Gigabit · 680W · Administrable</span></td><td class="td-desc">Infraestructura enterprise</td><td class="td-tag"><span class="tag tag-new">Enterprise</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Access Points & Cable UTP</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-NET-301</td><td class="td-name">Ubiquiti UniFi UAP-AC-PRO<span class="specs">Interior/Exterior · 2.4GHz · POE</span></td><td class="td-desc">Estándar enterprise Ubiquiti</td><td class="td-tag"><span class="tag tag-hot">Ubiquiti</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-302</td><td class="td-name">Zyxel NWA110AX WiFi 6<span class="specs">NebulaCLOUD · Dual Radio · POE</span></td><td class="td-desc">Gestión en nube incluida</td><td class="td-tag"><span class="tag tag-new">WiFi 6</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-303</td><td class="td-name">Zyxel NWA210AX WiFi 6<span class="specs">Dual Radio · POE · Uplink 2.5G</span></td><td class="td-desc">Mayor ancho de banda uplink</td><td class="td-tag"><span class="tag tag-new">2.5G Uplink</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-401</td><td class="td-name">Cable UTP Dahua Cat6 1000ft<span class="specs">Naranja · PFM922I-6UN-C</span></td><td class="td-desc">Red estructurada estándar</td><td class="td-tag"><span class="tag tag-pro">Cat6</span></td></tr>
-        <tr><td class="td-sku">ITN-NET-402</td><td class="td-name">Cable UTP Dahua Cat6 Cobre<span class="specs">100% Cobre · Azul · 1000ft</span></td><td class="td-desc">Instalaciones premium</td><td class="td-tag"><span class="tag tag-new">100% Cobre</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════ SEGURIDAD ══════════ -->
-<section id="seguridad">
-  <div class="section-hero">
-    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1400&h=500&fit=crop&q=80" alt="Seguridad CCTV">
-    <div class="hero-overlay"></div><div class="hero-overlay-left"></div>
-    <div class="hero-content">
-      <span class="hero-num">05 — CCTV & VIDEOVIGILANCIA</span>
-      <h2 class="hero-title">Cámaras &amp; <em>Seguridad</em></h2>
-      <p class="hero-desc">Videovigilancia profesional con Hikvision HD, Unno WiFi inteligentes, grabadores DVR/NVR y kits listos para instalar.</p>
-    </div>
-    <div class="hero-bar"></div>
-  </div>
-  <div class="products-wrap">
-    <div class="cat-label">Cámaras Hikvision — Analógica HD</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-CAM-101</td><td class="td-name">Hikvision Bullet 2MPX 1080P<span class="specs">DS-2CE16D0T-IRF · AHD/TVI/CVI/CVBS · Exterior</span></td><td class="td-desc">Estándar de la industria</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-102</td><td class="td-name">Hikvision Domo 2MPX 1080P<span class="specs">DS-2CE56D0T-IRF · AHD/TVI/CVI/CVBS · Interior</span></td><td class="td-desc">Para interiores</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-103</td><td class="td-name">Hikvision Domo 2MPX con Audio<span class="specs">DS-2CE76D0T-ITPFS · Micrófono integrado</span></td><td class="td-desc">Captura audio y video</td><td class="td-tag"><span class="tag tag-new">Con Audio</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-104</td><td class="td-name">Hikvision MiniBullet 2MPX<span class="specs">DS-2CE16D0T-ITFS · Compacta</span></td><td class="td-desc">Discreta y eficiente</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-105</td><td class="td-name">Logan Domo TVI 5MPX Varifocal<span class="specs">TL415DS · Zoom óptico 5x</span></td><td class="td-desc">Alta res. con zoom</td><td class="td-tag"><span class="tag tag-new">5MPX Zoom</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-106</td><td class="td-name">Logan Bullet TVI 5MPX Varifocal<span class="specs">TL585DS · Zoom 5x · Exterior</span></td><td class="td-desc">Bullet alta resolución</td><td class="td-tag"><span class="tag tag-new">5MPX Zoom</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Cámaras WiFi Inteligentes — Unno</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-CAM-201</td><td class="td-name">Unno Domo 4MP WiFi 360° Exterior<span class="specs">CM1430WT · HEVC · App · Detección inteligente</span></td><td class="td-desc">La más completa de la línea</td><td class="td-tag"><span class="tag tag-hot">4MP WiFi</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-202</td><td class="td-name">Unno Bullet 3MP WiFi Exterior<span class="specs">CM1413WT · Notificaciones · Visión nocturna</span></td><td class="td-desc">Exterior con WiFi</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-203</td><td class="td-name">Unno Domo WiFi Panel Solar<span class="specs">CM1431WT · 3MP · Sin cableado eléctrico</span></td><td class="td-desc">Instala sin corriente eléctrica</td><td class="td-tag"><span class="tag tag-new">Solar</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-204</td><td class="td-name">Unno Portátil Interior 360°<span class="specs">CM1419WT · 3MP WiFi · Seguimiento automático</span></td><td class="td-desc">Sigue el movimiento solo</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-CAM-205</td><td class="td-name">Unno Domo Exterior 360°<span class="specs">CM1415WT · 3MP WiFi · IP66</span></td><td class="td-desc">Resistente agua y polvo</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Grabadores DVR & Kits Completos</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-DVR-101</td><td class="td-name">Kit Fujita BR401 — 4 Canales + 4 Cámaras<span class="specs">Todo incluido · Plug &amp; Play · Disco incluido</span></td><td class="td-desc">Solución llave en mano</td><td class="td-tag"><span class="tag tag-hot">Kit Completo</span></td></tr>
-        <tr><td class="td-sku">ITN-DVR-102</td><td class="td-name">Grabador Fujita BR401-DVR + 1TB<span class="specs">4 Canales · Disco incluido</span></td><td class="td-desc">Solo el grabador con disco</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-DVR-103</td><td class="td-name">Hikvision DS-7116HGHI-K1<span class="specs">1080P · 16 Canales · AHD/TVI/CVI/CVBS/IP</span></td><td class="td-desc">Instalaciones de 16 cámaras</td><td class="td-tag"><span class="tag tag-new">16 Canales</span></td></tr>
-        <tr><td class="td-sku">ITN-DVR-104</td><td class="td-name">Logan LX4FNH DVR 5MPX<span class="specs">4 Canales · AHD/TVI/CVI/IP · Sin disco</span></td><td class="td-desc">Grabador 5 megapíxeles</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════ ENERGÍA ══════════ -->
-<section id="energia">
-  <div class="section-hero">
-    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1400&h=500&fit=crop&q=80" alt="UPS Energia">
-    <div class="hero-overlay"></div><div class="hero-overlay-left"></div>
-    <div class="hero-content">
-      <span class="hero-num">06 — RESPALDO DE ENERGÍA</span>
-      <h2 class="hero-title">UPS &amp; <em>Protección</em></h2>
-      <p class="hero-desc">Protege tu inversión tecnológica ante apagones y variaciones de voltaje. APC, CDP, reguladores y baterías de repuesto.</p>
-    </div>
-    <div class="hero-bar"></div>
-  </div>
-  <div class="products-wrap">
-    <div class="cat-label">UPS APC — Back-UPS, Pro y Smart</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-UPS-101</td><td class="td-name">APC Pro BX1500M 1500VA<span class="specs">900W · 120V · 10 Tomas · USB</span></td><td class="td-desc">Estándar para oficinas</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-102</td><td class="td-name">APC Pro BX1000M-LM60 1000VA<span class="specs">600W · 120V · 8 Tomas</span></td><td class="td-desc">Gran disponibilidad</td><td class="td-tag"><span class="tag tag-hot">Gran Stock</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-103</td><td class="td-name">APC Back-UPS BX1600M 1600VA<span class="specs">960W · 120V · 6 Tomas</span></td><td class="td-desc">Mayor autonomía</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-104</td><td class="td-name">APC Back-UPS BX2000M 2000VA<span class="specs">1200W · 120V · 6 Tomas</span></td><td class="td-desc">Servidores y workstations</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-105</td><td class="td-name">APC Easy BV800 800VA<span class="specs">450W · 120V · 6 Tomas</span></td><td class="td-desc">Opción económica confiable</td><td class="td-tag"><span class="tag tag-pro">Económico</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-106</td><td class="td-name">APC Smart SMT1500RM2UC Rack<span class="specs">1500VA/1000W · Rack 2U · Smart Connect</span></td><td class="td-desc">Instalaciones en rack</td><td class="td-tag"><span class="tag tag-new">Rack Smart</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-107</td><td class="td-name">APC Smart SMT2200RM2UC Rack<span class="specs">2200VA/1920W · Rack · Smart Connect</span></td><td class="td-desc">Mayor potencia en rack</td><td class="td-tag"><span class="tag tag-new">Rack Smart</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">UPS CDP & Reguladores</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Modelo</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-UPS-201</td><td class="td-name">CDP R-UPR1008 1000VA<span class="specs">500W · 8 Tomas · 120V</span></td><td class="td-desc">El más vendido CDP</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-202</td><td class="td-name">CDP R-UPR758 750VA<span class="specs">375W · 8 Tomas · 110V</span></td><td class="td-desc">Básico y económico</td><td class="td-tag"><span class="tag tag-hot">Económico</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-203</td><td class="td-name">CDP R-Smart 1510 1500VA<span class="specs">900W · 10 Tomas</span></td><td class="td-desc">Protección reforzada</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-204</td><td class="td-name">CDP R-Smart 2010 2000VA<span class="specs">1200W · 10 Tomas</span></td><td class="td-desc">Para servidores medianos</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-205</td><td class="td-name">CDP On-Line UPO11-1RT Rack<span class="specs">1000VA/800W · On-Line doble conversión</span></td><td class="td-desc">Protección total On-Line</td><td class="td-tag"><span class="tag tag-new">On-Line</span></td></tr>
-        <tr><td class="td-sku">ITN-UPS-206</td><td class="td-name">CDP On-Line UPO11-3 3000VA<span class="specs">2700W · On-Line</span></td><td class="td-desc">Alta potencia On-Line</td><td class="td-tag"><span class="tag tag-new">On-Line</span></td></tr>
-        <tr><td class="td-sku">ITN-REG-101</td><td class="td-name">Regulador CDP R-AVR5008 5000VA<span class="specs">2500W · 9 Tomas · Automático</span></td><td class="td-desc">Equipos sensibles</td><td class="td-tag"><span class="tag tag-pro">Regulador</span></td></tr>
-        <tr><td class="td-sku">ITN-REG-102</td><td class="td-name">Regulador CDP R-AVR3008 3000VA<span class="specs">2400W · 9 Tomas · Automático</span></td><td class="td-desc">Regulación estable</td><td class="td-tag"><span class="tag tag-pro">Regulador</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════ SOFTWARE ══════════ -->
-<section id="software">
-  <div class="section-hero">
-    <img src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=1400&h=500&fit=crop&q=80" alt="Licencias">
-    <div class="hero-overlay"></div><div class="hero-overlay-left"></div>
-    <div class="hero-content">
-      <span class="hero-num">07 — LICENCIAMIENTO</span>
-      <h2 class="hero-title">Software &amp; <em>Licencias</em></h2>
-      <p class="hero-desc">Microsoft Windows, Office 2024 y Microsoft 365. Kaspersky para seguridad total. Licencias 100% originales, activación digital garantizada.</p>
-    </div>
-    <div class="hero-bar"></div>
-  </div>
-  <div class="products-wrap">
-    <div class="highlight-strip">
-      <span class="hs-icon">🔑</span>
-      <div class="hs-text">
-        <h4>Licencias 100% Originales — Activación Garantizada</h4>
-        <p>Autorizadas por Microsoft y Kaspersky. Entrega digital inmediata tras la compra. Sin riesgos, sin complicaciones, con respaldo total.</p>
-      </div>
-    </div>
-    <div class="cat-label">Microsoft Windows</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Producto</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-WIN-101</td><td class="td-name">Windows 11 Pro Genuine ESD<span class="specs">64 Bit · Digital · Multilenguaje</span></td><td class="td-desc">La más solicitada</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-WIN-102</td><td class="td-name">Windows 11 Pro ESD<span class="specs">Descarga digital</span></td><td class="td-desc">Activación instantánea</td><td class="td-tag"><span class="tag tag-pro">Digital</span></td></tr>
-        <tr><td class="td-sku">ITN-WIN-103</td><td class="td-name">Windows 10 Pro DVD<span class="specs">Español · 64 Bits · Físico</span></td><td class="td-desc">Versión en disco físico</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Microsoft Office</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Producto</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-OFF-101</td><td class="td-name">Office Hogar y Estudiante 2024 ESD<span class="specs">Word · Excel · PowerPoint · OneNote · Pago único</span></td><td class="td-desc">Completa para el día a día</td><td class="td-tag"><span class="tag tag-hot">Popular</span></td></tr>
-        <tr><td class="td-sku">ITN-OFF-102</td><td class="td-name">Microsoft 365 Family Español<span class="specs">6 usuarios · 1 año · 1TB OneDrive c/u</span></td><td class="td-desc">Equipos y familias</td><td class="td-tag"><span class="tag tag-new">365 Cloud</span></td></tr>
-        <tr><td class="td-sku">ITN-OFF-103</td><td class="td-name">Microsoft 365 Personal ESD<span class="specs">1 usuario · 1 año · Multilenguaje</span></td><td class="td-desc">Uso individual</td><td class="td-tag"><span class="tag tag-pro">Personal</span></td></tr>
-        <tr><td class="td-sku">ITN-OFF-104</td><td class="td-name">Office Hogar y Negocio 2024 ESD<span class="specs">Incluye Outlook · Pago único</span></td><td class="td-desc">Con cliente de correo</td><td class="td-tag"><span class="tag tag-pro">Con Outlook</span></td></tr>
-        <tr><td class="td-sku">ITN-OFF-105</td><td class="td-name">Office Profesional Plus 2021 DVD<span class="specs">Suite completa · Access incluido</span></td><td class="td-desc">La suite más completa</td><td class="td-tag"><span class="tag tag-new">Full Suite</span></td></tr>
-      </tbody>
-    </table>
-    <div class="inner-divider"></div>
-    <div class="cat-label">Kaspersky — Seguridad Total</div>
-    <table class="product-table">
-      <thead><tr><th>SKU</th><th>Producto</th><th>Descripción</th><th>Categoría</th></tr></thead>
-      <tbody>
-        <tr><td class="td-sku">ITN-KAS-101</td><td class="td-name">Kaspersky Plus 3 Dispositivos<span class="specs">1 Año · Digital · Antivirus + VPN + KPM</span></td><td class="td-desc">La más solicitada del catálogo</td><td class="td-tag"><span class="tag tag-hot">Más Vendido</span></td></tr>
-        <tr><td class="td-sku">ITN-KAS-102</td><td class="td-name">Kaspersky Plus 5 Dispositivos<span class="specs">+ 3 KPM · 1 Año</span></td><td class="td-desc">Familias o equipos pequeños</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-        <tr><td class="td-sku">ITN-KAS-103</td><td class="td-name">Kaspersky Premium 3 Dispositivos<span class="specs">+ 2 KPM · 1 Año · Máxima protección</span></td><td class="td-desc">Soporte prioritario incluido</td><td class="td-tag"><span class="tag tag-new">Premium</span></td></tr>
-        <tr><td class="td-sku">ITN-KAS-104</td><td class="td-name">Kaspersky Premium 5 Dispositivos<span class="specs">+ 3 KPM · 1 Año</span></td><td class="td-desc">Premium para más usuarios</td><td class="td-tag"><span class="tag tag-new">Premium</span></td></tr>
-        <tr><td class="td-sku">ITN-KAS-105</td><td class="td-name">Kaspersky Standard 1 Dispositivo<span class="specs">1 Año · Descarga</span></td><td class="td-desc">Protección básica económica</td><td class="td-tag"><span class="tag tag-pro">Económico</span></td></tr>
-        <tr><td class="td-sku">ITN-KAS-106</td><td class="td-name">Kaspersky Standard 3 Dispositivos<span class="specs">1 Año · Descarga</span></td><td class="td-desc">Varios equipos a buen precio</td><td class="td-tag"><span class="tag tag-pro">Disponible</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ══════════ CONTACTO ══════════ -->
-<section id="contacto" class="contact-section">
-  <div class="contact-inner">
-    <div>
-      <div class="contact-brand"><span class="it">IT</span><span class="now">now</span><span class="cr">CR</span></div>
-      <div class="contact-tag">Smart Solutions</div>
-      <p class="contact-desc">Tu aliado tecnológico en Costa Rica. Consultoría IT, venta de equipo y soporte profesional para empresas. Consultamos, recomendamos y cotizamos según tus necesidades reales.</p>
-      <a href="https://wa.me/50684866927" class="cta-btn">Solicitar cotización →</a>
-    </div>
-    <div class="contact-items">
-      <div class="ci">
-        <div class="ci-icon">💬</div>
-        <div>
-          <span class="ci-label">WhatsApp</span>
-          <span class="ci-value">+506 8486-6927</span>
-        </div>
-      </div>
-      <div class="ci">
-        <div class="ci-icon">✉️</div>
-        <div>
-          <span class="ci-label">Correo Electrónico</span>
-          <span class="ci-value">ventas@itnowcr.com</span>
-        </div>
-      </div>
-      <div class="ci">
-        <div class="ci-icon">🌐</div>
-        <div>
-          <span class="ci-label">Sitio Web</span>
-          <span class="ci-value">www.itnowcr.com</span>
-        </div>
-      </div>
+<div class="mo" id="mo">
+  <div class="modal" id="modal">
+    <div class="modal-handle"></div>
+    <button class="mc" id="mc">✕</button>
+    <img id="mimg" class="modal-img" src="" alt="">
+    <div class="modal-body">
+      <div class="modal-top"><span id="mcat" class="modal-cat"></span><span id="msku" class="modal-sku"></span></div>
+      <div id="mname" class="modal-name"></div>
+      <div id="mspecs" class="specs-grid"></div>
+      <div class="modal-btns"><a id="mwa" href="" class="btn-wa" target="_blank">💬 Cotizar por WhatsApp</a><button class="btn-close" id="mcb">Cerrar</button></div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span class="footer-brand">© 2026 ITnowCR Smart Solutions</span>
-    <span>Precios disponibles a solicitud · Sujeto a disponibilidad</span>
-  </div>
-</section>
+</div>
 
+<script>
+// ── IMAGES per category ──
+const IMGS = {
+  laptop:     'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=300&fit=crop',
+  laptop_hp:  'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500&h=300&fit=crop',
+  laptop_dell:'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=500&h=300&fit=crop',
+  laptop_len: 'https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=500&h=300&fit=crop',
+  laptop_asus:'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&h=300&fit=crop',
+  laptop_dyn: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&h=300&fit=crop',
+  laptop_gaming:'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&h=300&fit=crop',
+  laptop_ref: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=500&h=300&fit=crop',
+  desktop:    'https://images.unsplash.com/photo-1593640408182-31c228f81b2e?w=500&h=300&fit=crop',
+  desktop_hp: 'https://images.unsplash.com/photo-1547082299-de196ea013d6?w=500&h=300&fit=crop',
+  desktop_mini:'https://images.unsplash.com/photo-1602080858428-57174f9431cf?w=500&h=300&fit=crop',
+  tableta:    'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&h=300&fit=crop',
+  tableta_sam:'https://images.unsplash.com/photo-1561154464-82e9adf32764?w=500&h=300&fit=crop',
+  monitor:    'https://images.unsplash.com/photo-1545231027-637d2f6210f8?w=500&h=300&fit=crop',
+  monitor_gaming:'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500&h=300&fit=crop',
+  monitor_curvo:'https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=500&h=300&fit=crop',
+  monitor_sam:'https://images.unsplash.com/photo-1586778996878-b5e63f7e6bb8?w=500&h=300&fit=crop',
+  monitor_port:'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=500&h=300&fit=crop',
+  proyector:  'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&h=300&fit=crop',
+  impresora:  'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&h=300&fit=crop',
+  tinta:      'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=500&h=300&fit=crop',
+  red_router: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=500&h=300&fit=crop',
+  red_switch: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop',
+  red_ap:     'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&h=300&fit=crop',
+  red_cable:  'https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=500&h=300&fit=crop',
+  camara:     'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&h=300&fit=crop',
+  camara_wifi:'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=500&h=300&fit=crop',
+  dvr:        'https://images.unsplash.com/photo-1516641051054-9df6a1aad654?w=500&h=300&fit=crop',
+  ups:        'https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=500&h=300&fit=crop',
+  regulador:  'https://images.unsplash.com/photo-1563770660941-10a63a9ed515?w=500&h=300&fit=crop',
+  software:   'https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=500&h=300&fit=crop',
+  storage:    'https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=500&h=300&fit=crop',
+  storage_usb:'https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?w=500&h=300&fit=crop',
+  componente: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&h=300&fit=crop',
+  gpu:        'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500&h=300&fit=crop',
+  case_pc:    'https://images.unsplash.com/photo-1593640495253-23196b27a87f?w=500&h=300&fit=crop',
+  periferico: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&h=300&fit=crop',
+  teclado:    'https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&h=300&fit=crop',
+  mouse:      'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&h=300&fit=crop',
+  pdv:        'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop',
+  tv:         'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500&h=300&fit=crop',
+  accesorio:  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop',
+  hub:        'https://images.unsplash.com/photo-1601787941547-8bd22d7da3d7?w=500&h=300&fit=crop',
+};
+
+function img(key){ return IMGS[key] || IMGS.accesorio; }
+function bl(brand,desc){const b=brand.toLowerCase(),d=desc.toLowerCase();return {b,d};}
+
+const P = [
+  // ── ALMACENAMIENTO EXTERNO ──
+  {id:'DDEXT4004',cat:'storage',name:'DD Externo Seagate 4TB',brand:'Seagate',b:'hot',bt:'Popular',img:img('storage'),specs:{Tipo:'Disco Externo 2.5"',Capacidad:'4TB',Interfaz:'USB 3.0',Color:'Negro',Formato:'Portátil'}},
+  {id:'DDEXT1706',cat:'storage',name:'DD Externo Toshiba Canvio 1TB',brand:'Toshiba',b:null,img:img('storage'),specs:{Tipo:'Disco Externo 2.5"',Capacidad:'1TB',Velocidad:'5400RPM',Interfaz:'USB 3.0',Formato:'Portátil'}},
+  {id:'DDEXT2100',cat:'storage',name:'DD Externo Toshiba Canvio 2TB',brand:'Toshiba',b:'hot',bt:'Gran Stock',img:img('storage'),specs:{Tipo:'Disco Externo 2.5"',Capacidad:'2TB',Velocidad:'5400RPM',Interfaz:'USB 3.0',Formato:'Portátil'}},
+  {id:'ENCAP004',cat:'storage',name:'Encapsulador Agiler 3.5" USB 3.0',brand:'Agiler',b:null,img:img('storage'),specs:{Tipo:'Encapsulador SATA',Tamaño:'3.5 pulgadas',Interfaz:'USB 3.0',Protocolo:'SATA'}},
+  {id:'ENCAP008',cat:'storage',name:'Encapsulador Agiler M.2 USB 3.0',brand:'Agiler',b:null,img:img('storage'),specs:{Tipo:'Encapsulador M.2',Interfaz:'USB 3.0 a SATA M.2',Formato:'Externo'}},
+  {id:'ENCAP201',cat:'storage',name:'Encapsulador Unno 2.5" SATA USB 3.0',brand:'Unno',b:'hot',bt:'Gran Stock',img:img('storage'),specs:{Tipo:'Encapsulador 2.5"',Interfaz:'USB 3.0',Protocolo:'SATA',Color:'Negro'}},
+  {id:'MEMSD2001',cat:'storage',name:'MicroSD 256GB Kingston Clase 10',brand:'Kingston',b:'hot',bt:'Popular',img:img('storage_usb'),specs:{Tipo:'Memoria MicroSD',Capacidad:'256GB',Clase:'Clase 10 / UHS-I',Modelo:'SDCG4/256GB'}},
+  {id:'MEMSD5001',cat:'storage',name:'MicroSD 512GB Kingston',brand:'Kingston',b:null,img:img('storage_usb'),specs:{Tipo:'Memoria MicroSD',Capacidad:'512GB',Modelo:'SDCS3/512GB'}},
+  {id:'MEMSD602',cat:'storage',name:'MicroSD 64GB Kingston SDXC',brand:'Kingston',b:null,img:img('storage_usb'),specs:{Tipo:'Memoria MicroSD',Capacidad:'64GB',Clase:'Clase 10',Modelo:'SDCS2/64GB'}},
+  {id:'MEMUSB1001',cat:'storage',name:'USB 128GB ADATA USB 3.2',brand:'ADATA',b:'hot',bt:'Gran Stock',img:img('storage_usb'),specs:{Tipo:'Memoria USB',Capacidad:'128GB',Interfaz:'USB 3.2',Modelo:'AUV128',Color:'Negro/Celeste'}},
+  {id:'MEMUSB1201',cat:'storage',name:'USB 128GB Kingston USB 3.2',brand:'Kingston',b:null,img:img('storage_usb'),specs:{Tipo:'Memoria USB',Capacidad:'128GB',Interfaz:'USB 3.2',Modelo:'DTX/128GB',Color:'Negra'}},
+  {id:'MEMUSB250',cat:'storage',name:'USB 256GB Kingston USB 3.2',brand:'Kingston',b:null,img:img('storage_usb'),specs:{Tipo:'Memoria USB',Capacidad:'256GB',Interfaz:'USB 3.2',Modelo:'DTX/256GB'}},
+  {id:'MEMUSB655',cat:'storage',name:'USB 64GB ADATA USB 3.2',brand:'ADATA',b:null,img:img('storage_usb'),specs:{Tipo:'Memoria USB',Capacidad:'64GB',Interfaz:'USB 3.2',Modelo:'AUV128'}},
+  {id:'MEMUSB606',cat:'storage',name:'USB 64GB Kingston DTX USB 3.2',brand:'Kingston',b:'hot',bt:'Popular',img:img('storage_usb'),specs:{Tipo:'Memoria USB',Capacidad:'64GB',Interfaz:'USB 3.2',Modelo:'DTX/64GB'}},
+  {id:'NAS450',cat:'storage',name:'NAS Asustor AS5402T 4TB',brand:'Asustor',b:'new',bt:'NAS',img:img('storage'),specs:{Tipo:'NAS 2 Bahías',Capacidad:'4TB incluido',Red:'2x Red Pro',Sistema:'ADM OS',Uso:'Almacenamiento en red'}},
+
+  // ── CÁMARAS HD ──
+  {id:'CAMSEG450.2',cat:'camara',name:'Hikvision Bullet 2MPX 1080P',brand:'Hikvision',b:'hot',bt:'Popular',img:img('camara'),specs:{Resolución:'2MP 1080P Full HD',Tipo:'Bullet Exterior',Señal:'AHD/TVI/CVI/CVBS',Visión:'Nocturna IR',Lente:'2.8mm fija',Modelo:'DS-2CE16D0T-IRF'}},
+  {id:'CAMSEG453',cat:'camara',name:'Hikvision MiniBullet 2MPX',brand:'Hikvision',b:null,img:img('camara'),specs:{Resolución:'2MP 1080P',Tipo:'MiniBullet',Señal:'AHD/TVI/CVI/CVBS',Modelo:'DS-2CE16D0T-ITFS'}},
+  {id:'CAMSEG451.1',cat:'camara',name:'Hikvision Domo 2MPX 1080P',brand:'Hikvision',b:'hot',bt:'Popular',img:img('camara'),specs:{Resolución:'2MP 1080P Full HD',Tipo:'Domo Interior',Señal:'AHD/TVI/CVI/CVBS',Modelo:'DS-2CE56D0T-IRF'}},
+  {id:'CAMSEG454',cat:'camara',name:'Hikvision Domo 2MPX con Audio',brand:'Hikvision',b:'new',bt:'Con Audio',img:img('camara'),specs:{Resolución:'2MP',Tipo:'Domo',Audio:'Micrófono integrado',Señal:'AHD/TVI/CVI/CVBS',Modelo:'DS-2CE76D0T-ITPFS'}},
+  {id:'CAMSEG409',cat:'camara',name:'Logan Bullet Starlight 2MPX',brand:'Logan',b:null,img:img('camara'),specs:{Resolución:'2MP 1080P',Tipo:'Bullet Starlight',Señal:'AHD/TVI/CVI/CVBS',Modelo:'LX2BBMR'}},
+  {id:'CAMSEG416',cat:'camara',name:'Logan Bullet 5MPX',brand:'Logan',b:'new',bt:'5MPX',img:img('camara'),specs:{Resolución:'5 Megapíxeles',Tipo:'Bullet',Lente:'2.8mm',Señal:'AHD/TVI/CVI/CVBS',Modelo:'LX5ABCH'}},
+  {id:'CAMSEG418',cat:'camara',name:'Logan Domo TVI 5MPX Varifocal',brand:'Logan',b:'new',bt:'5MPX Zoom',img:img('camara'),specs:{Resolución:'5 Megapíxeles',Tipo:'Domo TVI',Zoom:'Varifocal 5x',Modelo:'TL415DS-LH3548'}},
+  {id:'CAMSEG417',cat:'camara',name:'Logan Bullet TVI 5MPX Varifocal',brand:'Logan',b:'new',bt:'5MPX Zoom',img:img('camara'),specs:{Resolución:'5 Megapíxeles',Tipo:'Bullet TVI',Zoom:'Varifocal 5x',Modelo:'TL585DS-LH3548'}},
+  // WiFi
+  {id:'CAMSEG600',cat:'camara',name:'Unno Bullet 3MP WiFi Exterior',brand:'Unno',b:null,img:img('camara_wifi'),specs:{Resolución:'3MP',Tipo:'Bullet Exterior',Conectividad:'WiFi',App:'Smartphone',Modelo:'CM1413WT'}},
+  {id:'CAMSEG602',cat:'camara',name:'Unno Domo 3MP WiFi 360° Ext.',brand:'Unno',b:'hot',bt:'WiFi 360°',img:img('camara_wifi'),specs:{Resolución:'3MP',Tipo:'Domo 360° Exterior',Conectividad:'WiFi',App:'Smartphone',Modelo:'CM1415WT'}},
+  {id:'CAMSEG601',cat:'camara',name:'Unno Portátil Interior 360° WiFi',brand:'Unno',b:null,img:img('camara_wifi'),specs:{Resolución:'3MP',Tipo:'Portátil Interior 360°',Conectividad:'WiFi',Seguimiento:'Automático',Modelo:'CM1419WT'}},
+  {id:'CAMSEG604',cat:'camara',name:'Unno Domo 4MP WiFi 360° Ext.',brand:'Unno',b:'hot',bt:'4MP WiFi',img:img('camara_wifi'),specs:{Resolución:'4MP Ultra HD',Tipo:'Domo 360° Exterior',Conectividad:'WiFi',Protección:'IP66',Modelo:'CM1430WT'}},
+  {id:'CAMSEG605',cat:'camara',name:'Unno Domo WiFi Panel Solar 3MP',brand:'Unno',b:'new',bt:'Solar',img:img('camara_wifi'),specs:{Resolución:'3MP',Tipo:'Domo Exterior Solar',Energía:'Panel solar',Conectividad:'WiFi',Modelo:'CM1431WT'}},
+  {id:'WEBCAM504',cat:'camara',name:'Webcam Wesdar 1080P FHD',brand:'Wesdar',b:null,img:img('camara_wifi'),specs:{Tipo:'Webcam',Resolución:'1080P Full HD',Interfaz:'USB',Uso:'Videollamadas'}},
+  // DVR / Kits
+  {id:'KITGRAB000',cat:'camara',name:'Grabador Fujita BR401-DVR 4CH + 1TB',brand:'Fujita',b:'hot',bt:'Kit con Disco',img:img('dvr'),specs:{Canales:'4 canales',Disco:'1TB HDD incluido',Resolución:'1080P',Tipo:'DVR'}},
+  {id:'KITGRAB451',cat:'camara',name:'Grabador Hikvision 16CH 1080P',brand:'Hikvision',b:'new',bt:'16 Canales',img:img('dvr'),specs:{Canales:'16 canales',Resolución:'1080P',Señal:'AHD/TVI/CVI/CVBS/IP',Disco:'Sin disco',Modelo:'DS-7116HGHI-K1'}},
+  {id:'KITGRAB411',cat:'camara',name:'Grabador Logan 5MPX 4CH',brand:'Logan',b:null,img:img('dvr'),specs:{Canales:'4 canales',Resolución:'5 Megapíxeles',Señal:'AHD/TVI/CVI/CVBS/IP',Disco:'Sin disco',Modelo:'LX4FNH'}},
+  {id:'KITCAM060',cat:'camara',name:'Kit Fujita 4 Canales + 4 Cámaras',brand:'Fujita',b:'hot',bt:'Kit Completo',img:img('dvr'),specs:{Canales:'4 canales DVR',Cámaras:'4 cámaras incluidas',Disco:'Incluido',Tipo:'Kit llave en mano',Instalación:'Plug & Play'}},
+  {id:'KITCAM101',cat:'camara',name:'Kit Logan 4CH + 2 Cámaras Bullet',brand:'Logan',b:null,img:img('dvr'),specs:{Canales:'4 canales',Cámaras:'2 bullet 2MPX 1080P',Tipo:'Kit grabador lite',Modelo:'LX422BNH-L'}},
+
+  // ── DESKTOPS ──
+  {id:'DESKLEN007',cat:'desktop',name:'Lenovo ThinkCentre M625 Mini AMD',brand:'Lenovo',b:null,img:img('desktop_mini'),specs:{Procesador:'AMD A4-9120C 1.60-2.40GHz',RAM:'8GB',Almacenamiento:'128GB SSD',Formato:'Mini',SO:'Sin OS'}},
+  {id:'DESKLEN010',cat:'desktop',name:'Lenovo M75Q Tiny AMD Ryzen 5',brand:'Lenovo',b:'hot',bt:'Popular',img:img('desktop_mini'),specs:{Procesador:'Ryzen 5 Pro 5650GE 3.40-4.40GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Formato:'Tiny PC',SO:'Sin OS',Garantía:'2 años'}},
+  {id:'DESKASR001',cat:'desktop',name:'Mini PC ASRock 4x4 Ryzen 5',brand:'ASRock',b:null,img:img('desktop_mini'),specs:{Procesador:'Ryzen 5 4500U 2.30-4.0GHz',RAM:'2x DDR4 SODIMM (sin incluir)',Almacenamiento:'SATA+M.2 (sin incluir)',Formato:'Mini 4x4'}},
+  {id:'DESKASU402',cat:'desktop',name:'Mini PC Asus NUC i3-1220P',brand:'Asus',b:null,img:img('desktop_mini'),specs:{Procesador:'Core i3-1220P 3.30-4.40GHz',RAM:'2x DDR4 SODIMM (sin incluir)',Almacenamiento:'2.5"+M.2 (sin incluir)',Modelo:'RNUC12WSHI300001'}},
+  {id:'DESKASU403',cat:'desktop',name:'Mini PC Asus Core 3-100U',brand:'Asus',b:'new',bt:'Nuevo',img:img('desktop_mini'),specs:{Procesador:'Core 3-100U 1.20-4.70GHz',RAM:'2x DDR5 SODIMM (sin incluir)',Almacenamiento:'M.2 (sin incluir)',Modelo:'RNUC14RVHI300001I'}},
+  {id:'DESKASU404',cat:'desktop',name:'NUC Asus i3-1220P',brand:'Asus',b:null,img:img('desktop_mini'),specs:{Procesador:'Core i3-1220P 3.30-4.40GHz',RAM:'2x DDR4 SODIMM',Almacenamiento:'M.2+2.5"',Modelo:'RNUC12WSKI300001I'}},
+  {id:'DESKDEL703',cat:'desktop',name:'Dell Pro MFF i5-14500T ESP',brand:'Dell',b:'hot',bt:'Popular',img:img('desktop'),specs:{Procesador:'Core i5-14500T 1.20-4.8GHz',RAM:'8GB',Almacenamiento:'512GB SSD',SO:'Windows 11 Pro',Garantía:'3 años',Idioma:'Español'}},
+  {id:'DESKDEL701',cat:'desktop',name:'Dell Pro Slim i5-14500 ESP',brand:'Dell',b:'hot',bt:'Popular',img:img('desktop'),specs:{Procesador:'Core i5-14500 1.90-5.0GHz',RAM:'8GB',Almacenamiento:'512GB SSD',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'DESKDEL707',cat:'desktop',name:'Dell Refurb 7090 UFF i5 256GB',brand:'Dell',b:'r',bt:'Refurb',img:img('desktop'),specs:{Procesador:'Core i5-1145G7 1.10-4.40GHz',RAM:'16GB',Almacenamiento:'256GB SSD',SO:'Windows 11 Pro',Garantía:'2 años',Tipo:'Refurbished'}},
+  {id:'DESKDEL708',cat:'desktop',name:'Dell Refurb 7090 UFF i5 512GB',brand:'Dell',b:'r',bt:'Refurb',img:img('desktop'),specs:{Procesador:'Core i5-1145G7 1.10-4.40GHz',RAM:'16GB',Almacenamiento:'512GB SSD',SO:'Windows 11 Pro',Garantía:'2 años'}},
+  {id:'DESKHP652',cat:'desktop',name:'HP Pro 260 G9 MFF i5',brand:'HP',b:null,img:img('desktop_hp'),specs:{Procesador:'Core i5-1334U 3.40-4.60GHz',RAM:'16GB',Almacenamiento:'512GB SSD',SO:'Windows 11 Pro',Color:'Negra',Formato:'MFF'}},
+  {id:'DESKHP658',cat:'desktop',name:'HP ProDesk 280 G9 SFF i5-12500',brand:'HP',b:'hot',bt:'Gran Stock',img:img('desktop_hp'),specs:{Procesador:'Core i5-12500 3.0-4.60GHz',RAM:'16GB',Almacenamiento:'512GB SSD',SO:'Windows 11 Pro',Formato:'SFF'}},
+  {id:'DESKLEN663',cat:'desktop',name:'Lenovo M70Q Tiny i5-13400T',brand:'Lenovo',b:null,img:img('desktop_mini'),specs:{Procesador:'Core i5-13400T 1.0-4.40GHz',RAM:'16GB',Almacenamiento:'256GB SSD',SO:'Windows 11 Pro',Color:'Negra'}},
+  {id:'DESKLEN669',cat:'desktop',name:'Lenovo Neo 50Q Tiny i5-13420H',brand:'Lenovo',b:null,img:img('desktop_mini'),specs:{Procesador:'Core i5-13420H 3.40-4.60GHz',RAM:'16GB',Almacenamiento:'512GB SSD',SO:'Windows 11 Pro',Formato:'Tiny'}},
+  {id:'DESKASU605',cat:'desktop',name:'NUC Asus i5-1340P',brand:'Asus',b:null,img:img('desktop_mini'),specs:{Procesador:'Core i5-1340P 3.40-4.60GHz',RAM:'2x DDR4 SODIMM (sin incluir)',Almacenamiento:'M.2 (sin incluir)',Modelo:'RNUC13ANHI500001I'}},
+  {id:'DESKPC010',cat:'desktop',name:'PC Refurb i5-7400 + Teclado Mouse',brand:'Refurbished',b:'r',bt:'Económico',img:img('desktop'),specs:{Procesador:'Core i5-7400',RAM:'16GB',Almacenamiento:'240GB SSD',GPU:'1GB Video',Incluye:'Teclado y Mouse'}},
+  {id:'DESKDEL845',cat:'desktop',name:'Dell Pro MFF i7-14700T ESP',brand:'Dell',b:'new',bt:'Premium',img:img('desktop'),specs:{Procesador:'Core i7-14700T',RAM:'16GB',Almacenamiento:'512GB SSD',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'DESKDEL846',cat:'desktop',name:'Dell Pro Slim i7-14700',brand:'Dell',b:null,img:img('desktop'),specs:{Procesador:'Core i7-14700',RAM:'8GB',Almacenamiento:'512GB SSD',SO:'FreeDOS'}},
+  {id:'DESKDEL847',cat:'desktop',name:'Dell OptiPlex 5050 Refurb i7',brand:'Dell',b:'r',bt:'Refurb',img:img('desktop'),specs:{Procesador:'Core i7-6700 3.40-4.00GHz',RAM:'16GB',Almacenamiento:'512GB SSD',SO:'Windows 10 Pro'}},
+  {id:'DESKPC000',cat:'desktop',name:'PC Refurb i7-8700 + Teclado Mouse',brand:'Refurbished',b:'r',bt:'Económico',img:img('desktop'),specs:{Procesador:'Core i7-8700',RAM:'16GB',Almacenamiento:'240GB SSD',Incluye:'Teclado y Mouse'}},
+  {id:'DESKFU200',cat:'desktop',name:'Desktop FullPower Pentium G6405',brand:'FullPower',b:null,img:img('desktop'),specs:{Procesador:'Pentium G6405 4.10GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Garantía:'1 año'}},
+  {id:'DESKASU802',cat:'desktop',name:'NUC Asus Core Ultra 7 155H',brand:'Asus',b:'new',bt:'Core Ultra',img:img('desktop_mini'),specs:{Procesador:'Core Ultra 7 155H 1.40-4.80GHz',RAM:'2x DDR5 SODIMM (sin incluir)',Almacenamiento:'2.5"+M.2 (sin incluir)',Modelo:'RNUC14RVHU700001I'}},
+
+  // ── LAPTOPS AMD RYZEN 3 ──
+  {id:'NBHP023',cat:'laptop',name:'HP 14 AMD Ryzen 3 3250U',brand:'HP',b:null,img:img('laptop_hp'),specs:{Procesador:'AMD Ryzen 3 3250U 2.60-3.50GHz',RAM:'8GB',Almacenamiento:'1TB HDD',Pantalla:'14"',SO:'Windows 10'}},
+  {id:'NBLEN073',cat:'laptop',name:'Lenovo IdeaPad 1 Ryzen 3 7320U',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'AMD Ryzen 3 7320U 2.40-4.10GHz',RAM:'4GB',Almacenamiento:'128GB SSD',Pantalla:'15.6"',SO:'Windows 11S',Color:'Azul'}},
+  // AMD Ryzen 5
+  {id:'NBASU010',cat:'laptop',name:'Asus VivoBook 15 Ryzen 5',brand:'Asus',b:null,img:img('laptop_asus'),specs:{Procesador:'AMD Ryzen 5 7520U 2.80-4.30GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'15"',SO:'Sin OS'}},
+  {id:'NBHP069',cat:'laptop',name:'HP 15 Touch Ryzen 5 7520U 1TB',brand:'HP',b:'hot',bt:'Popular',img:img('laptop_hp'),specs:{Procesador:'AMD Ryzen 5 7520U 2.80-4.30GHz',RAM:'8GB',Almacenamiento:'1TB SSD',Pantalla:'15.6" Táctil',SO:'Windows 11',Color:'Plata'}},
+  {id:'NBHP066',cat:'laptop',name:'HP 15 Touch Ryzen 5 512GB',brand:'HP',b:null,img:img('laptop_hp'),specs:{Procesador:'AMD Ryzen 5 7520U 2.80-4.30GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'15.6"',SO:'Windows 11'}},
+  {id:'NBLEN074',cat:'laptop',name:'Lenovo IdeaPad 1 Ryzen 5 7520U',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'AMD Ryzen 5 7520U 2.80-4.30GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'15.6"',SO:'Windows 11',Color:'Azul'}},
+  {id:'NBLEN093',cat:'laptop',name:'Lenovo IdeaPad 3 Ryzen 5 8540U',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'AMD Ryzen 5 8540U 3.0-4.90GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'15.3"',SO:'Windows 11'}},
+  {id:'NBLEN098',cat:'laptop',name:'Lenovo IdeaPad Slim 3 Touch R5',brand:'Lenovo',b:'hot',bt:'Gran Stock',img:img('laptop_len'),specs:{Procesador:'AMD Ryzen 5 7520U 2.10-4.0GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'15.6" Táctil',SO:'Windows 11'}},
+  {id:'NBLEN092',cat:'laptop',name:'Lenovo ThinkPad E16 AMD R5',brand:'Lenovo',b:'hot',bt:'Popular',img:img('laptop_len'),specs:{Procesador:'AMD Ryzen 5 7535U 2.90-4.55GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'16"',SO:'Windows 11 Pro'}},
+  {id:'NBLEN088',cat:'laptop',name:'Lenovo ThinkPad L14 AMD R5',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'AMD Ryzen 5 5650U 2.30-4.20GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 10 Pro'}},
+  // AMD Ryzen 7
+  {id:'NBHP067',cat:'laptop',name:'HP OMEN Ryzen AI 7 RTX 5060',brand:'HP',b:'g',bt:'Gaming',img:img('laptop_gaming'),specs:{Procesador:'AMD Ryzen AI 7 350 2.0-5.0GHz',RAM:'16GB',Almacenamiento:'1TB SSD',GPU:'RTX 5060 8GB',Pantalla:'16"',SO:'Windows 11'}},
+  {id:'NBHP068',cat:'laptop',name:'HP Victus Ryzen 7 RTX 4050',brand:'HP',b:'g',bt:'Gaming',img:img('laptop_gaming'),specs:{Procesador:'AMD Ryzen 7 7445HS 3.20-4.70GHz',RAM:'16GB',Almacenamiento:'512GB SSD',GPU:'RTX 4050 6GB',Pantalla:'15.6"'}},
+  {id:'NBLEN099',cat:'laptop',name:'Lenovo IdeaPad Slim 3 Touch R7',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'AMD Ryzen 7 5825U 2.0-4.5GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'15.6" Táctil',SO:'Windows 11'}},
+  // Celeron
+  {id:'NBHP238',cat:'laptop',name:'HP ProBook Fortis 14 Celeron',brand:'HP',b:null,img:img('laptop_hp'),specs:{Procesador:'Celeron N5100 1.10-2.80GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+  // i3
+  {id:'NBASU415',cat:'laptop',name:'Asus VivoBook 15 i3-N305',brand:'Asus',b:null,img:img('laptop_asus'),specs:{Procesador:'Core i3-N305 3.80GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'15.6"',SO:'Windows 11',Color:'Plata'}},
+  {id:'NBHP501',cat:'laptop',name:'HP 15-FD0133 i3-N305',brand:'HP',b:'hot',bt:'Gran Stock',img:img('laptop_hp'),specs:{Procesador:'Core i3-N305 3.80GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'15.6"',SO:'Windows 11'}},
+  {id:'NBHP500',cat:'laptop',name:'HP ProBook 440 G9 i3-1215U',brand:'HP',b:'hot',bt:'Gran Stock',img:img('laptop_hp'),specs:{Procesador:'Core i3-1215U 3.30-4.40GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+  {id:'NBLEN485',cat:'laptop',name:'Lenovo IdeaPad Slim 3 i3-N305',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'Core i3-N305 3.80GHz',RAM:'8GB',Almacenamiento:'128GB SSD',Pantalla:'15.6"',SO:'Windows 11'}},
+  // i5
+  {id:'NBASU635',cat:'laptop',name:'Asus TUF FX607 i5 RTX 4050',brand:'Asus',b:'g',bt:'Gaming',img:img('laptop_gaming'),specs:{Procesador:'Core i5-210H 2.10-4.40GHz',RAM:'16GB',Almacenamiento:'512GB SSD',GPU:'RTX 4050 6GB',Pantalla:'16"',SO:'Sin OS'}},
+  {id:'NBASU633',cat:'laptop',name:'Asus VivoBook 14 i5-1334U',brand:'Asus',b:null,img:img('laptop_asus'),specs:{Procesador:'Core i5-1334U 3.40-4.60GHz',RAM:'12GB',Almacenamiento:'256GB SSD',Pantalla:'14"',SO:'Windows 11',Color:'Azul'}},
+  {id:'NBASU636',cat:'laptop',name:'Asus VivoBook 14 i5-120U',brand:'Asus',b:'hot',bt:'Gran Stock',img:img('laptop_asus'),specs:{Procesador:'Core i5-120U 1.40-5.0GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'14"',SO:'Windows 11S'}},
+  {id:'NBDEL1676',cat:'laptop',name:'Dell 15 ESP i5-1334U',brand:'Dell',b:null,img:img('laptop_dell'),specs:{Procesador:'Core i5-1334U 3.40-4.60GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'15.6"',SO:'Windows 11',Color:'Plata'}},
+  {id:'NBDEL1685',cat:'laptop',name:'Dell Latitude 5420 Refurb i5',brand:'Dell',b:'r',bt:'Refurb',img:img('laptop_ref'),specs:{Procesador:'Core i5-1135G7 2.40-4.20GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'14"',SO:'Windows 10 Pro'}},
+  {id:'NBDEL1678',cat:'laptop',name:'Dell Latitude 5431 Refurb Touch i5',brand:'Dell',b:'r',bt:'Refurb',img:img('laptop_ref'),specs:{Procesador:'Core i5-1250P 2.90-4.60GHz',RAM:'16GB',Almacenamiento:'256GB SSD',Pantalla:'14" Táctil',SO:'Windows 11 Pro'}},
+  {id:'NBDEL1658',cat:'laptop',name:'Dell Pro Black 14 Core 5-120U',brand:'Dell',b:'new',bt:'Nuevo',img:img('laptop_dell'),specs:{Procesador:'Core 5-120U 1.40-5.0GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro',Color:'Negra'}},
+  {id:'NBDEL1614',cat:'laptop',name:'Dell Vostro 3400 Refurb i5',brand:'Dell',b:'r',bt:'Refurb',img:img('laptop_ref'),specs:{Procesador:'Core i5-1135G7 2.40-4.20GHz',RAM:'8GB',Almacenamiento:'256GB SSD',Pantalla:'14"',SO:'Windows 10 Pro'}},
+  {id:'NBTOS643',cat:'laptop',name:'Dynabook Tecra A40-K i5-1334U',brand:'Dynabook',b:'new',bt:'Corporativo',img:img('laptop_dyn'),specs:{Procesador:'Core i5-1334U 3.40-4.60GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'NBHP1601',cat:'laptop',name:'HP 15-FD0250LA i5-1334U',brand:'HP',b:'hot',bt:'Gran Stock',img:img('laptop_hp'),specs:{Procesador:'Core i5-1334U 3.40-4.60GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'15.6"',SO:'Windows 11',Color:'Azul Oscuro'}},
+  {id:'NBHP1602',cat:'laptop',name:'HP ProBook 4 G1IR 14" i5',brand:'HP',b:'hot',bt:'Popular',img:img('laptop_hp'),specs:{Procesador:'Core i5-120U 1.40-5.0GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+  {id:'NBHP1603',cat:'laptop',name:'HP ProBook 4 G1IR 16" i5',brand:'HP',b:'hot',bt:'Popular',img:img('laptop_hp'),specs:{Procesador:'Core i5-120U 1.40-5.0GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'16"',SO:'Windows 11 Pro'}},
+  {id:'NBHP777',cat:'laptop',name:'HP Victus i5 RTX 2050',brand:'HP',b:'g',bt:'Gaming',img:img('laptop_gaming'),specs:{Procesador:'Core i5-12450H 3.30-4.40GHz',RAM:'8GB',Almacenamiento:'512GB SSD',GPU:'RTX 2050 4GB',Pantalla:'15.6"'}},
+  {id:'NBLEN779',cat:'laptop',name:'Lenovo LOQ Gaming i5 RTX 2050',brand:'Lenovo',b:'g',bt:'Gaming',img:img('laptop_gaming'),specs:{Procesador:'Core i5-12450HX 3.10-4.40GHz',RAM:'8GB',Almacenamiento:'512GB SSD',GPU:'RTX 2050 4GB',Pantalla:'15.6"'}},
+  {id:'NBLEN1607',cat:'laptop',name:'Lenovo IdeaPad Slim 3 i5-13420H',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'Core i5-13420H 3.40-4.60GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'15.3"',SO:'Windows 11',Garantía:'2 años'}},
+  {id:'NBVAI600',cat:'laptop',name:'VAIO Refurb 14" i5-1235U',brand:'VAIO',b:'r',bt:'Refurb',img:img('laptop_ref'),specs:{Procesador:'Core i5-1235U 3.30-4.40GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11'}},
+  // i7
+  {id:'NBASU909',cat:'laptop',name:'Asus VivoBook 14 i7-1355U',brand:'Asus',b:'hot',bt:'Popular',img:img('laptop_asus'),specs:{Procesador:'Core i7-1355U 3.40-4.60GHz',RAM:'12GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11',Color:'Azul'}},
+  {id:'NBDEL1822',cat:'laptop',name:'Dell 15 Touch i7-1355U 1TB',brand:'Dell',b:'new',bt:'Táctil',img:img('laptop_dell'),specs:{Procesador:'Core i7-1355U 3.70-5.00GHz',RAM:'16GB',Almacenamiento:'1TB SSD',Pantalla:'15.6" Táctil',SO:'Windows 11'}},
+  {id:'NBDEL1815',cat:'laptop',name:'Dell Alienware 16 i7 RTX 5050',brand:'Dell',b:'g',bt:'Gaming',img:img('laptop_gaming'),specs:{Procesador:'Core i7-240H 1.80-5.2GHz',RAM:'16GB',Almacenamiento:'1TB SSD',GPU:'RTX 5050 8GB',Pantalla:'16"'}},
+  {id:'NBDEL974',cat:'laptop',name:'Dell Latitude 3450 ESP i7',brand:'Dell',b:null,img:img('laptop_dell'),specs:{Procesador:'Core i7-1355U 3.70-5.00GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+  {id:'NBDEL1817',cat:'laptop',name:'Dell Latitude 5420 Refurb Touch i7',brand:'Dell',b:'r',bt:'Refurb',img:img('laptop_ref'),specs:{Procesador:'Core i7-1185G7 1.20-4.80GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14" Táctil',SO:'Windows 10 Pro'}},
+  {id:'NBTOS847',cat:'laptop',name:'Dynabook Sat Pro C50-K i7',brand:'Dynabook',b:'hot',bt:'Gran Stock',img:img('laptop_dyn'),specs:{Procesador:'Core i7-1355U 3.70-5.0GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'15.6"',SO:'Sin OS'}},
+  {id:'NBLEN966',cat:'laptop',name:'Lenovo ThinkPad E16 i7-240H',brand:'Lenovo',b:'hot',bt:'Popular',img:img('laptop_len'),specs:{Procesador:'Core i7-240H 1.80-5.20GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'16"',SO:'Windows 11 Pro'}},
+  {id:'NBVAI800',cat:'laptop',name:'VAIO Refurb 14.1" i7-1255U',brand:'VAIO',b:'r',bt:'Refurb',img:img('laptop_ref'),specs:{Procesador:'Core i7-1255U 3.50-4.70GHz',RAM:'16GB',Almacenamiento:'1TB SSD',Pantalla:'14.1"',SO:'Windows 11'}},
+  // i9
+  {id:'NBASU905',cat:'laptop',name:'Asus VivoBook S16 Touch i9 Refurb',brand:'Asus',b:'r',bt:'Refurb',img:img('laptop_ref'),specs:{Procesador:'Core i9-13900H 4.10-5.40GHz',RAM:'16GB',Almacenamiento:'1TB SSD',Pantalla:'15.6" Táctil',SO:'Windows 11'}},
+  // Ultra 5
+  {id:'NBDEL1684',cat:'laptop',name:'Dell Pro 14 Ultra 5 225U',brand:'Dell',b:'new',bt:'Ultra 5',img:img('laptop_dell'),specs:{Procesador:'Intel Core Ultra 5 225U 1.30-4.80GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+  {id:'NBDEL1683',cat:'laptop',name:'Dell Pro Silver 14 Ultra 5 235U',brand:'Dell',b:'new',bt:'Ultra 5',img:img('laptop_dell'),specs:{Procesador:'Intel Core Ultra 5 235U 1.60-4.90GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'NBTOS849',cat:'laptop',name:'Dynabook Tecra A60-M Ultra 5',brand:'Dynabook',b:'hot',bt:'Gran Stock',img:img('laptop_dyn'),specs:{Procesador:'Intel Core Ultra 5 225H 1.70-5.20GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'16"',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  // Ultra 7
+  {id:'NBASU848',cat:'laptop',name:'Asus VivoBook S Ultra 7 155H',brand:'Asus',b:'new',bt:'Ultra 7',img:img('laptop_asus'),specs:{Procesador:'Intel Core Ultra 7 155H 1.40-4.80GHz',RAM:'16GB',Almacenamiento:'1TB SSD',Pantalla:'15.6"',SO:'Windows 11'}},
+  {id:'NBDEL1809',cat:'laptop',name:'Dell Pro Silver 14 Ultra 7 255U',brand:'Dell',b:'hot',bt:'Destacado',img:img('laptop_dell'),specs:{Procesador:'Intel Core Ultra 7 255U 1.70-5.20GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'NBDEL1821',cat:'laptop',name:'Dell Pro Silver 16 Ultra 7 255U',brand:'Dell',b:'hot',bt:'Gran Stock',img:img('laptop_dell'),specs:{Procesador:'Intel Core Ultra 7 255U 1.70-5.20GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'16"',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'NBTOS848',cat:'laptop',name:'Dynabook Portégé X30W-K Touch Ultra 7',brand:'Dynabook',b:'new',bt:'Premium',img:img('laptop_dyn'),specs:{Procesador:'Intel Core Ultra 7 165H',RAM:'32GB',Almacenamiento:'512GB SSD',Pantalla:'13.3" Táctil',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'NBTOS842',cat:'laptop',name:'Dynabook Tecra A40-M Ultra 7 155U',brand:'Dynabook',b:null,img:img('laptop_dyn'),specs:{Procesador:'Intel Core Ultra 7 155U 1.20-4.80GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'NBTOS852',cat:'laptop',name:'Dynabook Tecra A60-M Ultra 7 255H',brand:'Dynabook',b:'hot',bt:'Gran Stock',img:img('laptop_dyn'),specs:{Procesador:'Intel Core Ultra 7 255H 2.50-5.10GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'16"',SO:'Windows 11 Pro',Garantía:'3 años'}},
+  {id:'NBHP958',cat:'laptop',name:'HP OMEN 16 Ultra 7 RTX 5060',brand:'HP',b:'g',bt:'Gaming',img:img('laptop_gaming'),specs:{Procesador:'Intel Core Ultra 7 255H 1.50-5.10GHz',RAM:'16GB',Almacenamiento:'1TB SSD',GPU:'RTX 5060 8GB',Pantalla:'16"'}},
+  {id:'NBHP949',cat:'laptop',name:'HP ProBook 440 G11 Ultra 7',brand:'HP',b:'new',bt:'Nuevo',img:img('laptop_hp'),specs:{Procesador:'Intel Core Ultra 7-155U 1.20-4.80GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+  {id:'NBHP951',cat:'laptop',name:'HP ProBook 460 G11 Ultra 7 16"',brand:'HP',b:'hot',bt:'Gran Stock',img:img('laptop_hp'),specs:{Procesador:'Intel Core Ultra 7-155U 1.20-4.80GHz',RAM:'16GB',Almacenamiento:'1TB SSD',Pantalla:'16"',SO:'Windows 11 Pro'}},
+  {id:'NBLEN973',cat:'laptop',name:'Lenovo ThinkPad T14 Ultra 7',brand:'Lenovo',b:'new',bt:'Empresarial',img:img('laptop_len'),specs:{Procesador:'Intel Core Ultra 7-155U 1.20-4.80GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+  {id:'NBLEN982',cat:'laptop',name:'Lenovo ThinkPad T14S Ultra 7',brand:'Lenovo',b:null,img:img('laptop_len'),specs:{Procesador:'Intel Core Ultra 7 155U 1.20-4.80GHz',RAM:'16GB',Almacenamiento:'512GB SSD',Pantalla:'14"',SO:'Windows 11 Pro'}},
+
+  // ── SERVIDORES ──
+  {id:'SERVDEL083',cat:'desktop',name:'Servidor Dell PowerEdge T150 Xeon',brand:'Dell',b:'new',bt:'Servidor',img:img('desktop'),specs:{Procesador:'Xeon E-2324G 3.10-4.60GHz',RAM:'16GB ECC',Almacenamiento:'1TB HDD',Tipo:'Torre',Uso:'Servidor empresarial'}},
+  {id:'SERVDEL095',cat:'desktop',name:'Servidor Dell PowerEdge T160',brand:'Dell',b:'new',bt:'Servidor',img:img('desktop'),specs:{Procesador:'Xeon 6 6325P3 3.5-5.2GHz',RAM:'16GB ECC',Almacenamiento:'2TB HDD',Tipo:'Torre'}},
+  {id:'SERVLEN004',cat:'desktop',name:'Servidor Lenovo ThinkSystem ST50',brand:'Lenovo',b:null,img:img('desktop'),specs:{Procesador:'Xeon E-2324G 3.10-4.60GHz',RAM:'16GB ECC',Tipo:'Torre',Uso:'Servidor empresarial'}},
+
+  // ── TABLETAS ──
+  {id:'TABLET407',cat:'tableta',name:'Samsung Galaxy Tab A11 8.7" WiFi+LTE',brand:'Samsung',b:'hot',bt:'Popular',img:img('tableta_sam'),specs:{Pantalla:'8.7"',RAM:'4GB',Almacenamiento:'64GB',Conectividad:'WiFi + LTE',SO:'Android',Modelo:'SM-X135'}},
+  {id:'TABLET892',cat:'tableta',name:'Samsung Galaxy Tab A11+ 11" 5G',brand:'Samsung',b:'new',bt:'5G',img:img('tableta_sam'),specs:{Pantalla:'11"',RAM:'6GB',Almacenamiento:'128GB',Conectividad:'WiFi+LTE 5G',Modelo:'SM-X236'}},
+  {id:'TABLET893',cat:'tableta',name:'Samsung Galaxy Tab A11+ 11" WiFi',brand:'Samsung',b:null,img:img('tableta_sam'),specs:{Pantalla:'11"',RAM:'6GB',Almacenamiento:'128GB',Conectividad:'WiFi',Modelo:'SM-X230'}},
+  {id:'TABLET396',cat:'tableta',name:'Samsung Galaxy Tab S10 Lite 10.9"',brand:'Samsung',b:'new',bt:'S10 Lite',img:img('tableta_sam'),specs:{Pantalla:'10.9"',RAM:'6GB',Almacenamiento:'128GB',Conectividad:'WiFi',Modelo:'SM-X400'}},
+  {id:'TABLET248',cat:'tableta',name:'Apple iPad 10.2" WiFi 64GB',brand:'Apple',b:'new',bt:'iPad',img:img('tableta'),specs:{Pantalla:'10.2"',Almacenamiento:'64GB',Conectividad:'WiFi',SO:'iPadOS',Modelo:'MK2K3LL/A',Color:'Gris'}},
+  {id:'TABLET497',cat:'tableta',name:'Lenovo Idea Tab 11 5G',brand:'Lenovo',b:'new',bt:'5G',img:img('tableta'),specs:{Pantalla:'11"',RAM:'8GB',Almacenamiento:'128GB',Conectividad:'5G-LTE',SO:'Android 15',Incluye:'Teclado+Lápiz'}},
+  {id:'TABLET496',cat:'tableta',name:'Lenovo Idea Tab Plus 12.1"',brand:'Lenovo',b:null,img:img('tableta'),specs:{Pantalla:'12.1"',RAM:'8GB',Almacenamiento:'128GB',Color:'Gris'}},
+  {id:'TABLET499',cat:'tableta',name:'Lenovo Tab 10 10.1" WiFi',brand:'Lenovo',b:null,img:img('tableta'),specs:{Pantalla:'10.1"',RAM:'4GB',Almacenamiento:'128GB',Conectividad:'WiFi',SO:'Android 14',Color:'Azul'}},
+
+  // ── MONITORES CURVOS ──
+  {id:'MOSAM254',cat:'monitor',name:'Samsung 24" Curvo FHD 100Hz',brand:'Samsung',b:null,img:img('monitor_curvo'),specs:{Pantalla:'24" Curvo',Resolución:'1920x1080 FHD',Frecuencia:'100Hz',Conexiones:'HDMI/VGA',Modelo:'S24D366GAN'}},
+  {id:'MOSAM275',cat:'monitor',name:'Samsung 27" Curvo FHD 100Hz',brand:'Samsung',b:'hot',bt:'Gran Stock',img:img('monitor_curvo'),specs:{Pantalla:'27" Curvo',Resolución:'1920x1080 FHD',Frecuencia:'100Hz',Conexiones:'VGA/HDMI',Modelo:'S27D366GAN'}},
+  {id:'MOSAM328',cat:'monitor',name:'Samsung 32" Curvo FHD 100Hz',brand:'Samsung',b:null,img:img('monitor_curvo'),specs:{Pantalla:'32" Curvo',Resolución:'1920x1080 FHD',Frecuencia:'100Hz',Conexiones:'HDMI/VGA',Modelo:'S32D396GAN'}},
+  {id:'MOXMI273',cat:'monitor',name:'X-Micro 27" Curvo FHD 120Hz',brand:'X-Micro',b:'hot',bt:'Gran Stock',img:img('monitor_curvo'),specs:{Pantalla:'27" Curvo',Resolución:'1920x1080 FHD',Frecuencia:'120Hz',Conexiones:'VGA/HDMI',Modelo:'X27CFE'}},
+  {id:'MOXMI241',cat:'monitor',name:'X-Micro 24" Gaming Curvo 165Hz RGB',brand:'X-Micro',b:'g',bt:'Gaming',img:img('monitor_gaming'),specs:{Pantalla:'24" Curvo',Resolución:'FHD',Frecuencia:'165Hz',RGB:'Sí',Incluye:'Mouse y Teclado'}},
+  {id:'MOXMI340',cat:'monitor',name:'X-Micro 34" Ultrawide Gaming 165Hz',brand:'X-Micro',b:'g',bt:'Gaming UW',img:img('monitor_gaming'),specs:{Pantalla:'34" Curvo Ultrawide',Resolución:'3440x1440',Frecuencia:'165Hz',Tiempo:'1ms',RGB:'Integrado',Garantía:'2 años'}},
+  // Planos
+  {id:'MOACE270',cat:'monitor',name:'Acer 27" FHD IPS HDMI',brand:'Acer',b:null,img:img('monitor'),specs:{Pantalla:'27" Plano',Resolución:'1920x1080 FHD',Panel:'IPS',Conexiones:'HDMI',Color:'Negro',Modelo:'EK271'}},
+  {id:'MOAOC214',cat:'monitor',name:'AOC Gaming 24" 144Hz FHD',brand:'AOC',b:'g',bt:'Gaming',img:img('monitor_gaming'),specs:{Pantalla:'24" Plano',Resolución:'1920x1080 FHD',Frecuencia:'144Hz',Conexiones:'DP/HDMI',Diseño:'Negro con Rojo',Modelo:'G2490VX'}},
+  {id:'MOAOC271',cat:'monitor',name:'AOC Gaming 27" 144Hz FHD',brand:'AOC',b:'hot',bt:'Gran Stock',img:img('monitor_gaming'),specs:{Pantalla:'27" Plano',Resolución:'1920x1080 FHD',Frecuencia:'144Hz',Conexiones:'DP/HDMI',Modelo:'G2790VX'}},
+  {id:'MOAOC217',cat:'monitor',name:'AOC IPS 24" Gaming 180Hz',brand:'AOC',b:'g',bt:'Gaming',img:img('monitor_gaming'),specs:{Pantalla:'24" IPS',Resolución:'FHD',Frecuencia:'180Hz',Conexiones:'DP/HDMI',Modelo:'24G4E'}},
+  {id:'MOAOC253',cat:'monitor',name:'AOC IPS 27" FHD 100Hz',brand:'AOC',b:'hot',bt:'Gran Stock',img:img('monitor'),specs:{Pantalla:'27" IPS',Resolución:'FHD',Frecuencia:'100Hz',Conexiones:'VGA/HDMI',Modelo:'27B30H'}},
+  {id:'MOASU286',cat:'monitor',name:'ASUS ROG Strix 27" QHD 280Hz',brand:'ASUS',b:'g',bt:'Gaming Pro',img:img('monitor_gaming'),specs:{Pantalla:'27" QHD',Resolución:'2560x1440',Frecuencia:'280Hz',Panel:'IPS',Conexiones:'DP/HDMI/USB-C',Modelo:'XG27WCMS'}},
+  {id:'MOASU283',cat:'monitor',name:'ASUS TUF 23.8" FHD 180Hz',brand:'ASUS',b:'g',bt:'Gaming',img:img('monitor_gaming'),specs:{Pantalla:'23.8" LED',Resolución:'1920x1080 FHD',Frecuencia:'180Hz',Conexiones:'DP/HDMI',Modelo:'VG249Q3A'}},
+  {id:'MOBEN240',cat:'monitor',name:'BenQ 24" GW2490T IPS 100Hz Ajustable',brand:'BenQ',b:'new',bt:'Ajustable',img:img('monitor'),specs:{Pantalla:'24" IPS',Resolución:'FHD',Frecuencia:'100Hz',Conexiones:'DP/HDMI',Base:'Altura ajustable',Garantía:'3 años'}},
+  {id:'MOBEN241',cat:'monitor',name:'BenQ 24" GW2491 IPS 100Hz',brand:'BenQ',b:'hot',bt:'Más Vendido',img:img('monitor'),specs:{Pantalla:'24" IPS',Resolución:'FHD',Frecuencia:'100Hz',Conexiones:'DP/HDMI',Color:'Negro',Garantía:'3 años'}},
+  {id:'MOBEN270',cat:'monitor',name:'BenQ 27" GW2791 IPS 100Hz',brand:'BenQ',b:'hot',bt:'Gran Stock',img:img('monitor'),specs:{Pantalla:'27" IPS',Resolución:'FHD',Frecuencia:'100Hz',Conexiones:'DP/HDMI',Color:'Negro',Garantía:'3 años'}},
+  {id:'MODEL227',cat:'monitor',name:'Dell 23.8" E2425HSM IPS 100Hz',brand:'Dell',b:null,img:img('monitor'),specs:{Pantalla:'23.8" IPS',Resolución:'FHD',Frecuencia:'100Hz',Conexiones:'VGA/HDMI/DP',Garantía:'3 años',Modelo:'E2425HSM'}},
+  {id:'MODEL254',cat:'monitor',name:'Dell Pro 27" E2725HM IPS 100Hz',brand:'Dell',b:'new',bt:'Dell Pro',img:img('monitor'),specs:{Pantalla:'27" IPS',Resolución:'FHD',Frecuencia:'100Hz',Conexiones:'VGA/HDMI/DP',Garantía:'3 años',Modelo:'E2725HM'}},
+  {id:'MOHP039',cat:'monitor',name:'HP 527SH 27" IPS FHD 100Hz',brand:'HP',b:null,img:img('monitor'),specs:{Pantalla:'27" IPS',Resolución:'FHD',Frecuencia:'100Hz',Conexiones:'VGA/HDMI',Modelo:'527SH'}},
+  {id:'MOHP030',cat:'monitor',name:'HP P24V 24" FHD VGA/HDMI',brand:'HP',b:null,img:img('monitor'),specs:{Pantalla:'24" FHD',Conexiones:'VGA/HDMI',Color:'Negro',Modelo:'P24V'}},
+  {id:'MOITV240',cat:'monitor',name:'ITVISIOU 23.6" FHD 75Hz',brand:'ITVISIOU',b:'hot',bt:'Gran Stock',img:img('monitor'),specs:{Pantalla:'23.6" LED',Resolución:'FHD',Frecuencia:'75Hz',Conexiones:'HDMI/VGA',Color:'Negro'}},
+  {id:'MOITV270',cat:'monitor',name:'ITVISIOU 27" FHD 75Hz',brand:'ITVISIOU',b:null,img:img('monitor'),specs:{Pantalla:'27" LED',Resolución:'FHD',Frecuencia:'75Hz',Conexiones:'HDMI/VGA',Color:'Negro'}},
+  {id:'MOLEN039',cat:'monitor',name:'Lenovo 15.6" Touch HDMI',brand:'Lenovo',b:'new',bt:'Táctil',img:img('monitor_port'),specs:{Pantalla:'15.6" Táctil',Conexiones:'HDMI',Color:'Negro',Tipo:'Portátil/Touch'}},
+  {id:'MOPHI200',cat:'monitor',name:'Philips 24" FHD 75Hz VGA/HDMI',brand:'Philips',b:'hot',bt:'Gran Stock',img:img('monitor'),specs:{Pantalla:'24" LED',Resolución:'FHD',Frecuencia:'75Hz',Conexiones:'VGA/HDMI',Modelo:'241E1S'}},
+  {id:'MOASU152',cat:'monitor',name:'ASUS Portátil 15.6" FHD USB-C',brand:'ASUS',b:'new',bt:'Portátil',img:img('monitor_port'),specs:{Pantalla:'15.6" IPS FHD',Frecuencia:'60Hz',Conexiones:'USB-C/Mini HDMI',Tipo:'Portable',Modelo:'MB169CK'}},
+  {id:'MOSAM329',cat:'monitor',name:'Samsung 32" 4K 60Hz HDMI/DP',brand:'Samsung',b:'new',bt:'4K',img:img('monitor_sam'),specs:{Pantalla:'32" FHD',Resolución:'4K UHD',Frecuencia:'60Hz',Conexiones:'HDMI/DP',Color:'Blanco',Modelo:'S32D701EAN'}},
+  {id:'MOSAM331',cat:'monitor',name:'Samsung 32" QHD Gaming 180Hz',brand:'Samsung',b:'g',bt:'Gaming',img:img('monitor_gaming'),specs:{Pantalla:'32" Wide QHD',Frecuencia:'180Hz',Conexiones:'HDMI/DP',Modelo:'S32DG502ENX',Gran:'Stock 27 uds'}},
+  {id:'MOSAM332',cat:'monitor',name:'Samsung Smart 32" 4K WiFi/AI',brand:'Samsung',b:'new',bt:'Smart 4K',img:img('monitor_sam'),specs:{Pantalla:'32" Wide 4K',Frecuencia:'60Hz',Conectividad:'HDMI/USB-C/WiFi',IA:'Integrada',Tipo:'Smart Monitor',Modelo:'S32FM700UN'}},
+  {id:'MOXMI150',cat:'monitor',name:'X-Micro Portátil 15.6" FHD',brand:'X-Micro',b:null,img:img('monitor_port'),specs:{Pantalla:'15.6" IPS FHD',Conexiones:'Mini HDMI/USB-C',Incluye:'Funda protectora',Tipo:'Portátil',Modelo:'X16F'}},
+  {id:'MOXMI151',cat:'monitor',name:'X-Micro Portátil 15.6" Touch FHD',brand:'X-Micro',b:'hot',bt:'Gran Stock',img:img('monitor_port'),specs:{Pantalla:'15.6" IPS FHD Táctil',Conexiones:'Mini HDMI/USB-C',Tipo:'Portátil Táctil',Modelo:'X16F'}},
+  {id:'MOXMI221',cat:'monitor',name:'X-Micro 22" FHD 75Hz VGA/HDMI',brand:'X-Micro',b:'hot',bt:'Más Vendido',img:img('monitor'),specs:{Pantalla:'22" FHD',Frecuencia:'75Hz',Conexiones:'VGA/HDMI',Color:'Negro',Modelo:'X22KN'}},
+  {id:'MOXMI242',cat:'monitor',name:'X-Micro 24" FHD 75Hz VGA/HDMI',brand:'X-Micro',b:'hot',bt:'Más Vendido',img:img('monitor'),specs:{Pantalla:'24" FHD',Frecuencia:'75Hz',Conexiones:'VGA/HDMI',Color:'Negro',Modelo:'X24KN'}},
+  {id:'MOXMI243',cat:'monitor',name:'X-Micro 24" Gaming IPS 180Hz',brand:'X-Micro',b:'g',bt:'Gaming',img:img('monitor_gaming'),specs:{Pantalla:'24" IPS FHD',Frecuencia:'180Hz',Conexiones:'DP/HDMI/USB',Garantía:'2 años',Modelo:'X24F'}},
+  {id:'MOXMI271',cat:'monitor',name:'X-Micro 27" FHD 75Hz VGA/HDMI',brand:'X-Micro',b:null,img:img('monitor'),specs:{Pantalla:'27" FHD',Frecuencia:'75Hz',Conexiones:'VGA/HDMI',Color:'Negro',Modelo:'X27KN'}},
+  {id:'MOXMI272',cat:'monitor',name:'X-Micro 27" Gaming IPS 180Hz',brand:'X-Micro',b:'g',bt:'Gaming',img:img('monitor_gaming'),specs:{Pantalla:'27" IPS FHD',Frecuencia:'180Hz',Conexiones:'DP/HDMI/USB',Garantía:'2 años',Modelo:'X27F'}},
+
+  // ── PROYECTORES ──
+  {id:'PROYE118',cat:'proyector',name:'BenQ MX560C XGA 4000 Lum',brand:'BenQ',b:null,img:img('proyector'),specs:{Resolución:'XGA 1024x768',Luminosidad:'4000 lúmenes',Conexiones:'HDMI/VGA',Tecnología:'DLP',Modelo:'MX560C'}},
+  {id:'PROYE119',cat:'proyector',name:'BenQ Gaming TH690ST FHD 4LED',brand:'BenQ',b:'g',bt:'Gaming',img:img('proyector'),specs:{Resolución:'FHD 1080P',Luminosidad:'4 LED',Conexiones:'HDMI/VGA',Tipo:'Gaming corta distancia',Modelo:'TH690ST'}},
+  {id:'PROYE016',cat:'proyector',name:'Epson E20 XGA 3400 Lum',brand:'Epson',b:'hot',bt:'Popular',img:img('proyector'),specs:{Resolución:'XGA 1024x768',Luminosidad:'3400 lúmenes',Conexiones:'HDMI/VGA',Tecnología:'3LCD',Modelo:'E20'}},
+  {id:'PROYE057',cat:'proyector',name:'Epson W49 WXGA 3800 Lum',brand:'Epson',b:null,img:img('proyector'),specs:{Resolución:'WXGA 1280x800',Luminosidad:'3800 lúmenes',Conexiones:'USB/HDMI/VGA',Tecnología:'3LCD',Modelo:'W49'}},
+  {id:'PROYE304',cat:'proyector',name:'Mini Proyector Boetec 720P Android',brand:'Boetec',b:'new',bt:'Mini',img:img('proyector'),specs:{Resolución:'720P',SO:'Android 11',Tipo:'Mini Proyector portátil',Modelo:'QMARFocus X',Gran:'Stock 44 uds'}},
+
+  // ── IMPRESORAS ──
+  {id:'IMEPS075',cat:'impresora',name:'Epson L1250 Inyección 33ppm',brand:'Epson',b:null,img:img('impresora'),specs:{Tipo:'Inyección de tinta',Velocidad:'33 ppm Negro / 15 Color',Conectividad:'USB',Tecnología:'EcoTank',Modelo:'L1250'}},
+  {id:'IMEPS321',cat:'impresora',name:'Epson L3250 Multifunción WiFi',brand:'Epson',b:'hot',bt:'Más Vendido',img:img('impresora'),specs:{Tipo:'Multifunción Inyección',Velocidad:'33 ppm Negro / 15 Color',Conectividad:'USB/WiFi',Funciones:'Imprime/Copia/Escanea',Modelo:'L3250'}},
+  {id:'IMEPS406',cat:'impresora',name:'Epson L4360 Multifunción WiFi',brand:'Epson',b:null,img:img('impresora'),specs:{Tipo:'Multifunción Inyección',Velocidad:'15 ppm Negro / 8 Color',Conectividad:'WiFi',Voltaje:'110V',Modelo:'L4360'}},
+  {id:'IMEPS500',cat:'impresora',name:'Epson L5590 Inalámbrica',brand:'Epson',b:'new',bt:'Inalámbrica',img:img('impresora'),specs:{Tipo:'Multifunción Inyección',Velocidad:'33 ppm Negro / 20 Color',Conectividad:'Inalámbrica',Modelo:'L5590'}},
+  {id:'IMPHP017',cat:'impresora',name:'HP Smart Tank 580 WiFi',brand:'HP',b:'hot',bt:'Gran Stock',img:img('impresora'),specs:{Tipo:'Multifunción Inyección',Velocidad:'12 ppm Negro / 5 Color',Conectividad:'WiFi/USB',Modelo:'Smart Tank 580',Gran:'Stock 117 uds'}},
+  {id:'IMEPS285',cat:'impresora',name:'Epson TM-T20III Térmica POS',brand:'Epson',b:null,img:img('pdv'),specs:{Tipo:'Impresora Térmica',Interfaz:'USB/Serial',Uso:'Punto de Venta',Modelo:'TM-T20III'}},
+
+  // ── TINTA / TÓNER ──
+  {id:'CARTU115',cat:'tinta',name:'Botella Epson T544 Negro 100ml',brand:'Epson',b:'hot',bt:'Gran Stock',img:img('tinta'),specs:{Tipo:'Botella de Tinta',Color:'Negro',Compatibilidad:'L3110/L3150 y más',Modelo:'T544120-AL',Stock:'76 unidades'}},
+  {id:'CARTU116',cat:'tinta',name:'Botella Epson T544 Cyan',brand:'Epson',b:null,img:img('tinta'),specs:{Tipo:'Botella de Tinta',Color:'Cyan',Compatibilidad:'L3110/L3150',Modelo:'T544220-AL'}},
+  {id:'CARTU117',cat:'tinta',name:'Botella Epson T544 Magenta',brand:'Epson',b:null,img:img('tinta'),specs:{Tipo:'Botella de Tinta',Color:'Magenta',Compatibilidad:'L3110/L3150',Modelo:'T544320-AL'}},
+  {id:'CARTU118',cat:'tinta',name:'Botella Epson T544 Amarillo',brand:'Epson',b:null,img:img('tinta'),specs:{Tipo:'Botella de Tinta',Color:'Amarillo',Compatibilidad:'L3110/L3150',Modelo:'T544420-AL'}},
+  {id:'CARTU110',cat:'tinta',name:'Botella Epson T504 Negro L4150+',brand:'Epson',b:'hot',bt:'Gran Stock',img:img('tinta'),specs:{Tipo:'Botella de Tinta',Color:'Negro',Compatibilidad:'L4150/L4160/L6171/L6191',Modelo:'T504120',Stock:'23 unidades'}},
+  {id:'CARTU418',cat:'tinta',name:'Botella HP GT53 Negro GT5820',brand:'HP',b:'hot',bt:'Popular',img:img('tinta'),specs:{Tipo:'Botella de Tinta',Color:'Negro',Compatibilidad:'GT5820',Modelo:'1VV22AL',Stock:'42 unidades'}},
+  {id:'CARTU411',cat:'tinta',name:'Botella HP GT52 Cyan GT5820',brand:'HP',b:null,img:img('tinta'),specs:{Tipo:'Botella de Tinta',Color:'Cyan',Compatibilidad:'GT5820',Modelo:'M0H54AL'}},
+  {id:'TONER015',cat:'tinta',name:'Tóner HP CE285A #85A Negro',brand:'HP',b:null,img:img('tinta'),specs:{Tipo:'Tóner Láser',Color:'Negro',Compatibilidad:'P1102W/M1132/M1212',Modelo:'CE285A / #85A'}},
+  {id:'TONER090',cat:'tinta',name:'Tóner HP CE250A #504A Negro',brand:'HP',b:null,img:img('tinta'),specs:{Tipo:'Tóner Láser',Color:'Negro',Compatibilidad:'CM3530MFP/CP3525DN',Modelo:'CE250A / #504A'}},
+  {id:'RESMA000',cat:'tinta',name:'Resma Papel Carta 500 Hojas',brand:'Genérico',b:'hot',bt:'Gran Stock',img:img('tinta'),specs:{Tipo:'Papel',Tamaño:'Carta',Hojas:'500 por resma',Color:'Blanco',Stock:'311 resmas'}},
+
+  // ── SOFTWARE ──
+  {id:'WIND047',cat:'software',name:'Windows 11 Pro Genuine ESD',brand:'Microsoft',b:'hot',bt:'Más Vendido',img:img('software'),specs:{Producto:'Windows 11 Pro',Bits:'64 Bit',Entrega:'Digital inmediata',Tipo:'ESD Genuine',Idioma:'Multilenguaje',Activación:'Garantizada'}},
+  {id:'WIND048',cat:'software',name:'Windows 10 Pro ESP 64bits DVD',brand:'Microsoft',b:null,img:img('software'),specs:{Producto:'Windows 10 Pro',Bits:'64 Bits',Idioma:'Español',Formato:'DVD',Activación:'Garantizada'}},
+  {id:'WIND046',cat:'software',name:'Windows 11 Pro ESD',brand:'Microsoft',b:null,img:img('software'),specs:{Producto:'Windows 11 Pro',Entrega:'Descarga digital',Activación:'Garantizada'}},
+  {id:'OFFICE051',cat:'software',name:'Office Hogar y Estudiante 2024 ESD',brand:'Microsoft',b:'hot',bt:'Popular',img:img('software'),specs:{Apps:'Word/Excel/PowerPoint/OneNote',Tipo:'Pago único',Entrega:'Digital inmediata',Dispositivos:'1 PC o Mac',Activación:'Garantizada'}},
+  {id:'OFFICE033',cat:'software',name:'Microsoft 365 Family ESP ESD',brand:'Microsoft',b:'new',bt:'365 Cloud',img:img('software'),specs:{Apps:'Suite completa Office 365',Usuarios:'6 usuarios',Duración:'1 año',OneDrive:'1TB por usuario',Entrega:'Digital inmediata'}},
+  {id:'OFFICE028',cat:'software',name:'Microsoft 365 Personal ESD',brand:'Microsoft',b:null,img:img('software'),specs:{Apps:'Suite Office 365',Usuarios:'1 usuario',Duración:'1 año',Entrega:'Digital inmediata',Idioma:'Multilenguaje'}},
+  {id:'OFFICE045',cat:'software',name:'Office Hogar y Negocio 2024 ESD',brand:'Microsoft',b:null,img:img('software'),specs:{Apps:'Word/Excel/PowerPoint/Outlook',Tipo:'Pago único',Entrega:'Digital',Activación:'Garantizada'}},
+  {id:'OFFICE012',cat:'software',name:'Office Profesional Plus 2021 DVD',brand:'Microsoft',b:null,img:img('software'),specs:{Apps:'Suite completa + Access',Formato:'DVD físico',Tipo:'Pago único',Activación:'Garantizada'}},
+  {id:'KASPER002',cat:'software',name:'Kaspersky Plus 3 Dispositivos 1 Año',brand:'Kaspersky',b:'hot',bt:'Más Vendido',img:img('software'),specs:{Producto:'Kaspersky Plus',Dispositivos:'3',Duración:'1 año',Incluye:'Antivirus+VPN+KPM',Entrega:'Descarga digital',Stock:'483 licencias'}},
+  {id:'KASPER003',cat:'software',name:'Kaspersky Plus 5 Disp. + 3KPM',brand:'Kaspersky',b:null,img:img('software'),specs:{Producto:'Kaspersky Plus',Dispositivos:'5',KPM:'3 KPM incluidos',Duración:'1 año',Entrega:'Descarga digital'}},
+  {id:'KASPER006',cat:'software',name:'Kaspersky Premium 3 Disp. + 2KPM',brand:'Kaspersky',b:'new',bt:'Premium',img:img('software'),specs:{Producto:'Kaspersky Premium',Dispositivos:'3',KPM:'2 KPM',Duración:'1 año',Soporte:'Prioritario incluido'}},
+  {id:'KASPER007',cat:'software',name:'Kaspersky Premium 5 Disp. + 3KPM',brand:'Kaspersky',b:'new',bt:'Premium',img:img('software'),specs:{Producto:'Kaspersky Premium',Dispositivos:'5',KPM:'3 KPM',Duración:'1 año'}},
+  {id:'KASPER000',cat:'software',name:'Kaspersky Standard 1 Dispositivo',brand:'Kaspersky',b:null,img:img('software'),specs:{Producto:'Kaspersky Standard',Dispositivos:'1',Duración:'1 año',Entrega:'Descarga digital',Stock:'92 licencias'}},
+  {id:'KASPER010',cat:'software',name:'Kaspersky Standard 3 Dispositivos',brand:'Kaspersky',b:null,img:img('software'),specs:{Producto:'Kaspersky Standard',Dispositivos:'3',Duración:'1 año',Entrega:'Descarga digital'}},
+  {id:'BITDEF020',cat:'software',name:'Bitdefender Internet Security 1 Año',brand:'Bitdefender',b:null,img:img('software'),specs:{Producto:'Bitdefender Internet Security',Dispositivos:'1',Duración:'1 año',Entrega:'ESD Digital'}},
+
+  // ── REDES ──
+  {id:'ROUTER852',cat:'red',name:'Dahua AX18 AX1800 WiFi 6',brand:'Dahua',b:'hot',bt:'Gran Stock',img:img('red_router'),specs:{Estándar:'WiFi 6 AX1800',Bandas:'Dual Band 2.4-5GHz',Antenas:'4 externas',Puertos:'Gigabit',Seguridad:'WPA3',Stock:'157 uds'}},
+  {id:'ROUTER853',cat:'red',name:'Dahua AX30 AX3000 WiFi 6',brand:'Dahua',b:null,img:img('red_router'),specs:{Estándar:'WiFi 6 AX3000',Bandas:'Dual Band 2.4-5GHz',Antenas:'4 externas',Puerto:'Gigabit'}},
+  {id:'ROUTER334',cat:'red',name:'Linksys MR7350 Mesh AX1800',brand:'Linksys',b:'new',bt:'Mesh',img:img('red_router'),specs:{Estándar:'WiFi 6 AX1800',Tecnología:'Mesh System',Bandas:'Dual Band',App:'Linksys Mobile'}},
+  {id:'ROUTER656',cat:'red',name:'Netis MW5360 LTE 4G 300Mbps',brand:'Netis',b:'new',bt:'4G LTE',img:img('red_router'),specs:{Estándar:'LTE 4G + WiFi 300Mbps',Bandas:'Dual Band 2.4-5GHz',Antenas:'4',SIM:'Puerto SIM integrado'}},
+  {id:'ROUTER650',cat:'red',name:'Netis NX62 AX6000 WiFi 6',brand:'Netis',b:'hot',bt:'Top Pick',img:img('red_router'),specs:{Estándar:'WiFi 6 AX6000',Bandas:'Dual Band 2.4-5GHz',Antenas:'4',Modo:'Multi-Mode',Puertos:'Gigabit'}},
+  {id:'ROUTER651',cat:'red',name:'Netis NX31 AX3000 WiFi 6',brand:'Netis',b:null,img:img('red_router'),specs:{Estándar:'WiFi 6 AX3000',Bandas:'Dual Band',Antenas:'4',Modo:'Multi-Mode'}},
+  {id:'ROUTER652',cat:'red',name:'Netis NX10 AX1500 WiFi 6',brand:'Netis',b:null,img:img('red_router'),specs:{Estándar:'WiFi 6 AX1500',Bandas:'Dual Band',Antenas:'4',Modo:'Multi-Mode'}},
+  {id:'ROUTER237',cat:'red',name:'TP-Link Deco X50 Outdoor Mesh',brand:'TP-Link',b:'new',bt:'Outdoor',img:img('red_router'),specs:{Estándar:'WiFi 6 AX3000',Resistencia:'IP67 Intemperie',Tecnología:'Mesh',Bandas:'Dual Band 2.4/5GHz'}},
+  {id:'ROUTER204',cat:'red',name:'TP-Link WR840N N300 2.4GHz',brand:'TP-Link',b:'hot',bt:'Económico',img:img('red_router'),specs:{Estándar:'WiFi N300',Banda:'2.4GHz',Antenas:'2',Stock:'7 uds'}},
+  {id:'ACCESP507',cat:'red',name:'Ubiquiti UniFi UAP-AC-PRO',brand:'Ubiquiti',b:'new',bt:'Enterprise',img:img('red_ap'),specs:{Estándar:'802.11ac Dual Band',Instalación:'Interior/Exterior',Alimentación:'POE 802.3af',Velocidad:'450Mbps',Gestión:'UniFi Controller'}},
+  {id:'ACCESP600',cat:'red',name:'Zyxel NWA110AX WiFi 6 POE',brand:'Zyxel',b:'new',bt:'WiFi 6',img:img('red_ap'),specs:{Estándar:'WiFi 6',Radios:'Dual Radio',POE:'Incluido',Puertos:'Gigabit',Gestión:'NebulaCLOUD'}},
+  {id:'ACCESP601',cat:'red',name:'Zyxel NWA210AX WiFi 6 2.5G',brand:'Zyxel',b:'new',bt:'2.5G Uplink',img:img('red_ap'),specs:{Estándar:'WiFi 6',Uplink:'2.5 Gigabit',POE:'Incluido',Gestión:'NebulaCLOUD'}},
+  {id:'SWITCH857',cat:'red',name:'Dahua Switch 8pts 10/100',brand:'Dahua',b:'hot',bt:'Más Vendido',img:img('red_switch'),specs:{Puertos:'8',Velocidad:'10/100Mbps',Tipo:'No administrable',Stock:'85 uds',Modelo:'PFS3008-8ET-L'}},
+  {id:'SWITCH859',cat:'red',name:'Dahua Switch 8pts Gigabit',brand:'Dahua',b:null,img:img('red_switch'),specs:{Puertos:'8',Velocidad:'Gigabit 10/100/1000',Tipo:'No administrable',Modelo:'PFS3008-8GT-L'}},
+  {id:'SWITCH851',cat:'red',name:'Dahua Switch 10pts POE 65W',brand:'Dahua',b:'hot',bt:'POE',img:img('red_switch'),specs:{Puertos:'8 POE + 2 Uplink',Potencia:'65W total',Velocidad:'10/100Mbps',Tipo:'No administrable',Modelo:'PFS3010-8ET-65W'}},
+  {id:'SWITCH855',cat:'red',name:'Dahua Switch 10pts Gigabit POE 96W',brand:'Dahua',b:'new',bt:'Gigabit POE',img:img('red_switch'),specs:{Puertos:'8 POE Gigabit + 2 Uplink',Potencia:'96W',Tipo:'No administrable',Modelo:'PFS3010-8GT-96'}},
+  {id:'SWITCH864',cat:'red',name:'Dahua Switch 16pts Gigabit',brand:'Dahua',b:null,img:img('red_switch'),specs:{Puertos:'16 Gigabit',Tipo:'No administrable',Stock:'23 uds',Modelo:'S3016-16GT'}},
+  {id:'SWITCH862',cat:'red',name:'Dahua Switch 24pts Gigabit',brand:'Dahua',b:'hot',bt:'Gran Stock',img:img('red_switch'),specs:{Puertos:'24 Gigabit',Tipo:'No administrable',Stock:'23 uds',Modelo:'S3024-24GT'}},
+  {id:'SWITCH863',cat:'red',name:'Dahua Switch 50pts Gigabit SG1050',brand:'Dahua',b:'new',bt:'50 Puertos',img:img('red_switch'),specs:{Puertos:'50 Gigabit',Tipo:'No administrable',Uso:'Instalaciones grandes',Modelo:'SG1050'}},
+  {id:'SWITCH865',cat:'red',name:'Dahua Switch 18pts POE Cloud Admin',brand:'Dahua',b:'new',bt:'Cloud Admin',img:img('red_switch'),specs:{Puertos:'16 POE + 2 Uplink',Potencia:'190W',Tipo:'Cloud Administrable',App:'DMSS/SmartPSS',Modelo:'CS4218-16ET-190'}},
+  {id:'SWITCH117',cat:'red',name:'Aruba JL428A 48pts POE 680W',brand:'Aruba',b:'new',bt:'Enterprise',img:img('red_switch'),specs:{Puertos:'48 POE Gigabit',Potencia:'680W total',Tipo:'Administrable Enterprise',Modelo:'JL428A'}},
+  {id:'CABUTP357',cat:'red',name:'Cable UTP Dahua Cat6 1000ft Naranja',brand:'Dahua',b:null,img:img('red_cable'),specs:{Categoría:'Cat6',Longitud:'1000 pies / 305 metros',Color:'Naranja',Modelo:'PFM922I-6UN-C'}},
+  {id:'CABUTP353',cat:'red',name:'Cable UTP Dahua Cat6 1000ft 100% Cobre',brand:'Dahua',b:'new',bt:'100% Cobre',img:img('red_cable'),specs:{Categoría:'Cat6',Longitud:'1000 pies / 305 metros',Material:'100% Cobre',Color:'Azul'}},
+  {id:'CABUTP700',cat:'red',name:'Cable UTP Unno Cat6 1000ft Gris',brand:'Unno',b:null,img:img('red_cable'),specs:{Categoría:'Cat6',Pares:'4 pares',Longitud:'1000 pies',Color:'Gris'}},
+  {id:'EXPAND650',cat:'red',name:'Netis E3 Extensor AC1200 Dual Band',brand:'Netis',b:null,img:img('red_router'),specs:{Estándar:'AC1200 WiFi 5',Bandas:'Dual Band 2.4-5GHz',Antenas:'2',Modo:'Multi-Mode Router/AP/Extensor'}},
+  {id:'TWIFI650',cat:'red',name:'Tarjeta PCIe Netis WiFi 6 BT',brand:'Netis',b:'new',bt:'WiFi 6',img:img('red_ap'),specs:{Tipo:'Tarjeta PCIe',Estándar:'WiFi 6 3000Mbps',Bandas:'Dual Band 2.4-5GHz',Bluetooth:'Incluido',Modelo:'F1'}},
+
+  // ── UPS / ENERGÍA ──
+  {id:'UPSAPC1503',cat:'ups',name:'APC Pro BX1500M 1500VA/900W',brand:'APC',b:'hot',bt:'Más Vendido',img:img('ups'),specs:{Capacidad:'1500VA / 900W',Tomas:'10 tomas',Voltaje:'120V',USB:'Incluido',Serie:'Back-UPS Pro',Garantía:'2 años'}},
+  {id:'UPSAPC1006',cat:'ups',name:'APC Pro BX1000M 1000VA/600W',brand:'APC',b:'hot',bt:'Gran Stock',img:img('ups'),specs:{Capacidad:'1000VA / 600W',Tomas:'8 tomas',Voltaje:'120V',Serie:'Back-UPS Pro',Garantía:'2 años'}},
+  {id:'UPSAPC1600',cat:'ups',name:'APC Back-UPS BX1600M 1600VA',brand:'APC',b:null,img:img('ups'),specs:{Capacidad:'1600VA / 960W',Tomas:'6 tomas',Voltaje:'120V',Serie:'Back-UPS'}},
+  {id:'UPSAPC2012',cat:'ups',name:'APC Back-UPS BX2000M 2000VA',brand:'APC',b:null,img:img('ups'),specs:{Capacidad:'2000VA / 1200W',Tomas:'6 tomas',Voltaje:'120V',Serie:'Back-UPS'}},
+  {id:'UPSAPC804',cat:'ups',name:'APC Easy BV800 800VA/450W',brand:'APC',b:null,img:img('ups'),specs:{Capacidad:'800VA / 450W',Tomas:'6 tomas',Voltaje:'120V',Serie:'Back-UPS Easy'}},
+  {id:'UPSAPC1509',cat:'ups',name:'APC Smart SMT1500RM2UC Rack',brand:'APC',b:'new',bt:'Rack Smart',img:img('ups'),specs:{Capacidad:'1500VA / 1000W',Tomas:'6 tomas',Formato:'Rack 2U',Gestión:'Smart Connect App',Voltaje:'120V'}},
+  {id:'UPSAPC2009',cat:'ups',name:'APC Smart SMT2200RM2UC Rack',brand:'APC',b:'new',bt:'Rack Smart',img:img('ups'),specs:{Capacidad:'2200VA / 1920W',Tomas:'8 tomas',Formato:'Rack 2U',Voltaje:'110-125V'}},
+  {id:'UPSAPC9010',cat:'ups',name:'APC Easy 10000VA/10000W 208V',brand:'APC',b:'new',bt:'Industrial',img:img('ups'),specs:{Capacidad:'10000VA / 10000W',Voltaje:'208V',Uso:'Datacenter/Industrial',Modelo:'E3SUPS10KFBS'}},
+  {id:'UPSCDP1006',cat:'ups',name:'CDP R-UPR1008 1000VA/500W',brand:'CDP',b:'hot',bt:'Más Vendido',img:img('regulador'),specs:{Capacidad:'1000VA / 500W',Tomas:'8 tomas',Voltaje:'120V',Tipo:'Línea interactiva',Stock:'149 uds'}},
+  {id:'UPSCDP705',cat:'ups',name:'CDP R-UPR758 750VA/375W',brand:'CDP',b:'hot',bt:'Económico',img:img('regulador'),specs:{Capacidad:'750VA / 375W',Tomas:'8 tomas',Voltaje:'110V',Tipo:'Línea interactiva',Stock:'141 uds'}},
+  {id:'UPSCDP1510',cat:'ups',name:'CDP R-Smart 1510 1500VA',brand:'CDP',b:null,img:img('ups'),specs:{Capacidad:'1500VA / 900W',Tomas:'10 tomas',Tipo:'R-Smart línea interactiva'}},
+  {id:'UPSCDP1101',cat:'ups',name:'CDP On-Line UPO11-1RT Rack',brand:'CDP',b:'new',bt:'On-Line',img:img('ups'),specs:{Capacidad:'1000VA / 800W',Tipo:'On-Line doble conversión',Formato:'Rack',Protección:'Total ante cortes'}},
+  {id:'UPSCDP3005',cat:'ups',name:'CDP On-Line UPO11-3 3000VA',brand:'CDP',b:'new',bt:'On-Line',img:img('ups'),specs:{Capacidad:'3000VA / 2700W',Tipo:'On-Line doble conversión',Voltaje:'120V'}},
+  {id:'REGUL015',cat:'ups',name:'Regulador CDP R-AVR5008 5000VA',brand:'CDP',b:'hot',bt:'Popular',img:img('regulador'),specs:{Capacidad:'5000VA / 2500W',Tomas:'9 tomas',Voltaje:'120V',Tipo:'Regulador AVR automático',Stock:'18 uds'}},
+  {id:'REGUL008',cat:'ups',name:'Regulador CDP R-AVR3008 3000VA',brand:'CDP',b:null,img:img('regulador'),specs:{Capacidad:'3000VA / 2400W',Tomas:'9 tomas',Voltaje:'120V',Tipo:'Regulador AVR automático'}},
+  {id:'REGUL002',cat:'ups',name:'Regulador CDP 1000VA 4 USB',brand:'CDP',b:null,img:img('regulador'),specs:{Capacidad:'1000VA / 400W',Tomas:'8 + 4 USB',Voltaje:'120V/220V',Tipo:'Regulador AVR'}},
+  {id:'INVCDP000',cat:'ups',name:'Inversor CDP 200W para Carro',brand:'CDP',b:'new',bt:'Para Auto',img:img('regulador'),specs:{Potencia:'200W',Tomas:'2 tomas AC + 4 USB',Uso:'Vehículo / 12V',Modelo:'XVU212'}},
+
+  // ── COMPONENTES ──
+  {id:'DDSOL1022',cat:'componente',name:'Kingston SSD 1TB M.2 NVMe PCIe 4.0',brand:'Kingston',b:'hot',bt:'Gran Stock',img:img('storage'),specs:{Tipo:'SSD NVMe M.2 2280',Capacidad:'1TB',Interfaz:'PCIe 4.0',Modelo:'SNV3S',Velocidad:'Alta velocidad'}},
+  {id:'DDSOL516',cat:'componente',name:'Kingston SSD 500GB M.2 NVMe PCIe 4.0',brand:'Kingston',b:null,img:img('storage'),specs:{Tipo:'SSD NVMe M.2 2280',Capacidad:'500GB',Interfaz:'PCIe 4.0',Modelo:'SNV3S'}},
+  {id:'DDSOL212',cat:'componente',name:'Kingston SSD 240GB SATA SA400',brand:'Kingston',b:'hot',bt:'Gran Stock',img:img('storage'),specs:{Tipo:'SSD SATA 2.5"',Capacidad:'240GB',Modelo:'SA400',Stock:'72 uds'}},
+  {id:'DDSOL412',cat:'componente',name:'Kingston SSD 480GB SATA SA400',brand:'Kingston',b:null,img:img('storage'),specs:{Tipo:'SSD SATA 2.5"',Capacidad:'480GB',Modelo:'SA400',Stock:'30 uds'}},
+  {id:'DDSOL534',cat:'componente',name:'Boetec SSD 512GB M.2 NVMe',brand:'Boetec',b:'hot',bt:'Gran Stock',img:img('storage'),specs:{Tipo:'SSD NVMe M.2 2280',Capacidad:'512GB',Interfaz:'PCIe',Stock:'79 uds'}},
+  {id:'DDSOL2030',cat:'componente',name:'Kingston SSD 2TB M.2 NVMe PCIe 4.0',brand:'Kingston',b:null,img:img('storage'),specs:{Tipo:'SSD NVMe M.2 2280',Capacidad:'2TB',Interfaz:'PCIe 4.0',Modelo:'SNV3S'}},
+  {id:'DDPC1101',cat:'componente',name:'DD PC Toshiba 1TB 5700RPM SATA',brand:'Toshiba',b:null,img:img('storage'),specs:{Tipo:'Disco Duro 3.5"',Capacidad:'1TB',Velocidad:'5700RPM',Interfaz:'SATA III',Condición:'Pulls'}},
+  {id:'MEMPC623',cat:'componente',name:'Kingston 16GB DDR4 3200MHz U-DIMM',brand:'Kingston',b:'hot',bt:'Gran Stock',img:img('componente'),specs:{Tipo:'Memoria DDR4',Capacidad:'16GB',Velocidad:'3200MHz',Formato:'U-DIMM',Stock:'65+31 uds'}},
+  {id:'MEMPC502',cat:'componente',name:'Kingston 8GB DDR4 3200MHz U-DIMM',brand:'Kingston',b:null,img:img('componente'),specs:{Tipo:'Memoria DDR4',Capacidad:'8GB',Velocidad:'3200MHz',Formato:'U-DIMM'}},
+  {id:'MEMPC619',cat:'componente',name:'Kingston 16GB DDR5 5600MHz U-DIMM',brand:'Kingston',b:'hot',bt:'DDR5',img:img('componente'),specs:{Tipo:'Memoria DDR5',Capacidad:'16GB',Velocidad:'5600MHz',Formato:'U-DIMM',Stock:'30 uds'}},
+  {id:'MEMPC942',cat:'componente',name:'Kingston 32GB DDR5 5600MHz 2Rx8',brand:'Kingston',b:null,img:img('componente'),specs:{Tipo:'Memoria DDR5',Capacidad:'32GB',Velocidad:'5600MHz',Formato:'U-DIMM 2Rx8'}},
+  {id:'MEMPOR953',cat:'componente',name:'Kingston 16GB DDR4 3200MHz SO-DIMM',brand:'Kingston',b:'hot',bt:'Gran Stock',img:img('componente'),specs:{Tipo:'Memoria Laptop DDR4',Capacidad:'16GB',Velocidad:'3200MHz',Formato:'SO-DIMM',Stock:'101 uds'}},
+  {id:'MEMPOR836',cat:'componente',name:'Kingston 8GB DDR4 3200MHz SO-DIMM',brand:'Kingston',b:null,img:img('componente'),specs:{Tipo:'Memoria Laptop DDR4',Capacidad:'8GB',Velocidad:'3200MHz',Formato:'SO-DIMM'}},
+  {id:'MEMPOR962',cat:'componente',name:'Kingston 16GB DDR5 5600MHz SO-DIMM',brand:'Kingston',b:'hot',bt:'DDR5',img:img('componente'),specs:{Tipo:'Memoria Laptop DDR5',Capacidad:'16GB',Velocidad:'5600MHz',Formato:'SO-DIMM',Stock:'38 uds'}},
+  {id:'PROCESA243',cat:'componente',name:'AMD Ryzen 5 8500G AM5 65W',brand:'AMD',b:'new',bt:'Con GPU',img:img('componente'),specs:{Socket:'AM5',Velocidad:'3.30-5.0GHz',Caché:'16MB',TDP:'65W',Gráficos:'Radeon integrada',Stock:'10 uds'}},
+  {id:'PROCESA239',cat:'componente',name:'AMD Ryzen 5 8600G AM5',brand:'AMD',b:null,img:img('componente'),specs:{Socket:'AM5',Velocidad:'4.30-5.0GHz',Caché:'16MB',Gráficos:'Radeon 760M integrada'}},
+  {id:'PROCESA247',cat:'componente',name:'AMD Ryzen 7 8700G AM5',brand:'AMD',b:'new',bt:'Con GPU',img:img('componente'),specs:{Socket:'AM5',Velocidad:'4.20-5.1GHz',Caché:'16MB',Gráficos:'Radeon 780M integrada'}},
+  {id:'PROCESA578',cat:'componente',name:'Intel Core i3-14100T LGA1700',brand:'Intel',b:'hot',bt:'Gran Stock',img:img('componente'),specs:{Socket:'LGA1700',Velocidad:'2.70-4.40GHz',Generación:'14va',TDP:'OEM sin disipador',Stock:'19 uds'}},
+  {id:'PROCESA616',cat:'componente',name:'Intel Core Ultra 5 225 LGA1851',brand:'Intel',b:'new',bt:'Ultra',img:img('componente'),specs:{Socket:'LGA1851',Velocidad:'2.70-4.90GHz',Generación:'Core Ultra',Stock:'14 uds'}},
+  {id:'PROCESA719',cat:'componente',name:'Intel Core Ultra 7 265 LGA1851',brand:'Intel',b:'new',bt:'Ultra 7',img:img('componente'),specs:{Socket:'LGA1851',Velocidad:'1.80-5.30GHz',Generación:'Core Ultra',Stock:'8 uds'}},
+  {id:'TVIDEO268',cat:'componente',name:'ASUS RTX 3050 DUAL 6GB GDDR6',brand:'ASUS',b:null,img:img('gpu'),specs:{GPU:'GeForce RTX 3050',VRAM:'6GB GDDR6',Bus:'96-bit',Conexiones:'HDMI/DP/DVI',Stock:'26 uds'}},
+  {id:'TVIDEO274',cat:'componente',name:'ASUS RTX 5050 DUAL 8GB DDR6',brand:'ASUS',b:'new',bt:'RTX 5050',img:img('gpu'),specs:{GPU:'GeForce RTX 5050',VRAM:'8GB DDR6',Bus:'128-bit',Conexiones:'HDMI/DP',Stock:'29 uds'}},
+  {id:'TVIDEO271',cat:'componente',name:'ASUS RTX 5060 DUAL 8GB GDDR7',brand:'ASUS',b:'new',bt:'RTX 5060',img:img('gpu'),specs:{GPU:'GeForce RTX 5060',VRAM:'8GB GDDR7',Bus:'128-bit',Conexiones:'HDMI/DP',Stock:'14 uds'}},
+  {id:'TVIDEO272',cat:'componente',name:'ASUS RTX 5060 Ti DUAL 8GB GDDR7',brand:'ASUS',b:'new',bt:'RTX 5060Ti',img:img('gpu'),specs:{GPU:'GeForce RTX 5060 Ti',VRAM:'8GB GDDR7',Bus:'128-bit',Conexiones:'HDMI/DP',Stock:'5 uds'}},
+  {id:'TVIDEO725',cat:'componente',name:'MSI RTX 5070 Shadow 2X 12GB GDDR7',brand:'MSI',b:'new',bt:'RTX 5070',img:img('gpu'),specs:{GPU:'GeForce RTX 5070',VRAM:'12GB GDDR7',Bus:'192-bit',Conexiones:'HDMI/DP',Stock:'19 uds'}},
+  {id:'TVIDEO726',cat:'componente',name:'MSI RTX 5070 Ventus 2X 12GB GDDR7',brand:'MSI',b:'hot',bt:'RTX 5070',img:img('gpu'),specs:{GPU:'GeForce RTX 5070',VRAM:'12GB GDDR7',Bus:'192-bit',Conexiones:'HDMI/DP',Stock:'15 uds'}},
+  {id:'TVIDEO270',cat:'componente',name:'ASUS TUF RTX 5080 Gaming 16GB',brand:'ASUS',b:'new',bt:'RTX 5080',img:img('gpu'),specs:{GPU:'GeForce RTX 5080',VRAM:'16GB GDDR7',Bus:'256-bit',Conexiones:'HDMI/DP',Stock:'2 uds'}},
+  {id:'TMADRE894',cat:'componente',name:'ASUS PRIME H610M-K DDR5 LGA1700',brand:'ASUS',b:'hot',bt:'Gran Stock',img:img('componente'),specs:{Socket:'LGA1700',Chipset:'H610',RAM:'Max 96GB DDR5',Conexiones:'HDMI/VGA',Formato:'mATX',Stock:'89 uds'}},
+  {id:'TMADRE929',cat:'componente',name:'ASUS PRIME H610M-F D4 LGA1700',brand:'ASUS',b:'hot',bt:'Gran Stock',img:img('componente'),specs:{Socket:'LGA1700',Chipset:'H610',RAM:'Max 64GB DDR4',Conexiones:'HDMI',Formato:'mATX',Compatibilidad:'12-14va gen'}},
+  {id:'TMADRE053',cat:'componente',name:'ASUS A620M-A AM5 DDR5',brand:'ASUS',b:'hot',bt:'Gran Stock',img:img('componente'),specs:{Socket:'AM5',Chipset:'A620',RAM:'Max 192GB DDR5',Conexiones:'HDMI/VGA/DP',Formato:'mATX',Stock:'20 uds'}},
+  {id:'TMADRE186',cat:'componente',name:'ASUS PRIME B650EM-A AM5 WiFi',brand:'ASUS',b:null,img:img('componente'),specs:{Socket:'AM5',Chipset:'B650',RAM:'Max 256GB DDR5',WiFi:'Integrado',Conexiones:'DP/HDMI',Formato:'mATX'}},
+  {id:'CASEPC109',cat:'componente',name:'Case X-Micro M03 Slim 650W',brand:'X-Micro',b:'hot',bt:'Gran Stock',img:img('case_pc'),specs:{Tipo:'Slim con Fuente',Fuente:'650W',Color:'Negro',Stock:'259 uds',Modelo:'M03'}},
+  {id:'CASEPC110',cat:'componente',name:'Case X-Micro XMJ01 650W',brand:'X-Micro',b:'hot',bt:'Gran Stock',img:img('case_pc'),specs:{Tipo:'Case con Fuente',Fuente:'650W',Color:'Negro',Stock:'470 uds',Modelo:'XMJ01'}},
+  {id:'CASEPC101',cat:'componente',name:'Case Gaming X-Micro S8 ARGB',brand:'X-Micro',b:'g',bt:'Gaming',img:img('case_pc'),specs:{Tipo:'Gaming Vidrio Templado',Abanicos:'2x ARGB',Fuente:'Sin fuente',Color:'Negro',Stock:'121 uds',Modelo:'S8'}},
+  {id:'CASEPC754',cat:'componente',name:'Case ASUS GT502 TUF Gaming',brand:'ASUS',b:'g',bt:'Gaming',img:img('case_pc'),specs:{Tipo:'mATX Vidrio Templado',Fuente:'Sin fuente',Color:'Blanco',Marca:'ASUS TUF',Modelo:'GT502'}},
+  {id:'FUENTE651',cat:'componente',name:'Fuente X-Micro ATX 650W',brand:'X-Micro',b:'hot',bt:'Gran Stock',img:img('componente'),specs:{Potencia:'650W',Tipo:'ATX',Stock:'853 uds',Modelo:'ATX-650W'}},
+  {id:'FUENTE1010',cat:'componente',name:'Fuente X-Micro 1000W 80+ Gold Modular',brand:'X-Micro',b:'new',bt:'Gold Modular',img:img('componente'),specs:{Potencia:'1000W',Certificación:'80+ Gold',Tipo:'Full Modular',Modelo:'XM1000G',Stock:'73 uds'}},
+
+  // ── PERIFÉRICOS ──
+  {id:'KITLOG018',cat:'periferico',name:'Kit Logitech MK295 Wireless ESP',brand:'Logitech',b:'hot',bt:'Gran Stock',img:img('periferico'),specs:{Tipo:'Kit Teclado + Mouse',Conectividad:'Wireless 2.4GHz',Idioma:'Español',Modelo:'MK295',Stock:'56 uds'}},
+  {id:'KITLOG014',cat:'periferico',name:'Kit Logitech MK470 Slim Wireless',brand:'Logitech',b:'new',bt:'Slim',img:img('periferico'),specs:{Tipo:'Kit Teclado + Mouse Slim',Conectividad:'Wireless',Idioma:'Español',Modelo:'MK470',Stock:'37 uds'}},
+  {id:'KITLOG004',cat:'periferico',name:'Kit Logitech MK270 Wireless ESP',brand:'Logitech',b:'hot',bt:'Popular',img:img('periferico'),specs:{Tipo:'Kit Teclado + Mouse',Conectividad:'Wireless',Idioma:'Español',Modelo:'MK270',Stock:'23 uds'}},
+  {id:'KITDEL009',cat:'periferico',name:'Kit Dell KM3322W Wireless ESP',brand:'Dell',b:null,img:img('periferico'),specs:{Tipo:'Kit Teclado + Mouse',Conectividad:'Wireless',Idioma:'Español',Color:'Negro',Modelo:'KM3322W'}},
+  {id:'TECLA751',cat:'periferico',name:'Teclado X-Micro XGK-914 Gaming RGB',brand:'X-Micro',b:'g',bt:'Gaming',img:img('teclado'),specs:{Tipo:'Teclado Mecánico Gaming',RGB:'Sí',Interfaz:'USB',Idioma:'Español',Stock:'374 uds',Modelo:'XGK-914'}},
+  {id:'TECLA103',cat:'periferico',name:'Teclado Logitech Wave Keys Ergonómico',brand:'Logitech',b:'new',bt:'Ergonómico',img:img('teclado'),specs:{Tipo:'Teclado Ergonómico',Conectividad:'Wireless USB',Idioma:'Español',Modelo:'Wave Keys'}},
+  {id:'TECLA100',cat:'periferico',name:'Teclado Logitech K120 USB ESP',brand:'Logitech',b:'hot',bt:'Popular',img:img('teclado'),specs:{Tipo:'Teclado USB',Idioma:'Español',Modelo:'K120',Stock:'40 uds'}},
+  {id:'TECLA905',cat:'periferico',name:'Teclado Dell KB216 USB Inglés',brand:'Dell',b:'hot',bt:'Gran Stock',img:img('teclado'),specs:{Tipo:'Teclado USB',Idioma:'Inglés',Color:'Negro',Modelo:'KB216',Stock:'66 uds'}},
+  {id:'MOUSE412',cat:'periferico',name:'Mouse Logitech M190 Wireless Gris',brand:'Logitech',b:'hot',bt:'Gran Stock',img:img('mouse'),specs:{Tipo:'Mouse Inalámbrico',DPI:'1000',Botones:'3',Color:'Gris',Modelo:'M190',Stock:'99 uds'}},
+  {id:'MOUSE401',cat:'periferico',name:'Mouse Logitech M90 USB Negro',brand:'Logitech',b:'hot',bt:'Gran Stock',img:img('mouse'),specs:{Tipo:'Mouse USB Óptico',Color:'Negro',Modelo:'M90',Stock:'142 uds'}},
+  {id:'MOUSE301',cat:'periferico',name:'Mouse X-Micro Gaming 7200DPI RGB',brand:'X-Micro',b:'g',bt:'Gaming',img:img('mouse'),specs:{Tipo:'Mouse Gaming USB',DPI:'7200',Botones:'6',RGB:'Sí',Stock:'297 uds',Modelo:'XGM-230'}},
+  {id:'MOUSE503',cat:'periferico',name:'Mouse HP 200 Bluetooth Azul',brand:'HP',b:null,img:img('mouse'),specs:{Tipo:'Mouse Bluetooth',DPI:'1600',Botones:'3',Color:'Azul',Modelo:'HP 200'}},
+  {id:'MALETIN204',cat:'periferico',name:'Maletín Dell EcoLoop 14-16"',brand:'Dell',b:'hot',bt:'Gran Stock',img:img('periferico'),specs:{Tipo:'Maletín para Laptop',Tamaño:'14" a 16"',Material:'EcoLoop Sostenible',Modelo:'CC5623',Stock:'20 uds'}},
+  {id:'MOCHI700',cat:'periferico',name:'Mochila Dynabook 15.6" Gris',brand:'Dynabook',b:'hot',bt:'Gran Stock',img:img('periferico'),specs:{Tipo:'Mochila para Laptop',Tamaño:'15.6"',Color:'Gris',Stock:'100 uds'}},
+  {id:'MOCHI003',cat:'periferico',name:'Mochila Targus Intellect 15.6"',brand:'Targus',b:null,img:img('periferico'),specs:{Tipo:'Mochila para Laptop',Tamaño:'15.6"',Color:'Negra',Modelo:'TSB966DI-70',Stock:'24 uds'}},
+  {id:'BASE350',cat:'periferico',name:'Base Enfriadora Unno 2 USB',brand:'Unno',b:'hot',bt:'Gran Stock',img:img('periferico'),specs:{Tipo:'Base Enfriadora Laptop',USB:'2 puertos USB 2.0',Ventiladores:'1',Modelo:'NC6130BK',Stock:'50 uds'}},
+  {id:'CARGA250',cat:'periferico',name:'Cargador Unno 90W para Laptop',brand:'Unno',b:'hot',bt:'Popular',img:img('accesorio'),specs:{Tipo:'Cargador Universal Laptop',Potencia:'90W',Modelo:'PW5291BK',Stock:'29 uds'}},
+
+  // ── PUNTO DE VENTA ──
+  {id:'IMP3NS018',cat:'pdv',name:'3NStar RPT004 Térmica USB/Ethernet',brand:'3NStar',b:'hot',bt:'Gran Stock',img:img('pdv'),specs:{Tipo:'Impresora Térmica POS',Interfaz:'USB/Ethernet',Carga:'Automática',Stock:'236 uds',Modelo:'RPT004'}},
+  {id:'IMP3NS007',cat:'pdv',name:'3NStar PPT305BT Térmica Portátil BT',brand:'3NStar',b:'new',bt:'Portátil',img:img('pdv'),specs:{Tipo:'Impresora Térmica Portátil',Interfaz:'USB/Bluetooth',Modelo:'PPT305BT',Stock:'17 uds'}},
+  {id:'IMP3NS014',cat:'pdv',name:'3NStar RPT006B Térmica BT/ETH',brand:'3NStar',b:null,img:img('pdv'),specs:{Tipo:'Impresora Térmica POS',Interfaz:'USB/Ethernet/Bluetooth',Modelo:'RPT006B',Stock:'12 uds'}},
+  {id:'IMP3NS022',cat:'pdv',name:'3NStar LDT124 Etiquetas USB/LAN',brand:'3NStar',b:'new',bt:'Etiquetas',img:img('pdv'),specs:{Tipo:'Impresora Térmica Etiquetas',DPI:'203',Interfaz:'USB/LAN',Modelo:'LDT124',Stock:'12 uds'}},
+  {id:'IMPHON000',cat:'pdv',name:'Honeywell PC42E Etiquetas 200/300DPI',brand:'Honeywell',b:'new',bt:'Profesional',img:img('pdv'),specs:{Tipo:'Impresora Térmica Etiquetas',DPI:'200/300',Interfaz:'USB/Ethernet',Modelo:'PC42E-T',Stock:'20 uds'}},
+  {id:'LECTBAR016',cat:'pdv',name:'Honeywell HH490 Voyager 1D/2D USB',brand:'Honeywell',b:'hot',bt:'Gran Stock',img:img('pdv'),specs:{Tipo:'Lector de Código de Barras',Lectura:'1D/2D/PDF',Interfaz:'USB',Modelo:'HH490',Stock:'62 uds'}},
+  {id:'LECTBAR601',cat:'pdv',name:'3NStar SC100 1D USB con Estante',brand:'3NStar',b:'hot',bt:'Gran Stock',img:img('pdv'),specs:{Tipo:'Lector de Código de Barras',Lectura:'1D',Interfaz:'USB',Incluye:'Estante',Stock:'51 uds',Modelo:'SC100'}},
+  {id:'LECTBAR608',cat:'pdv',name:'3NStar SC410 2D USB con Estante',brand:'3NStar',b:'new',bt:'2D',img:img('pdv'),specs:{Tipo:'Lector Código de Barras 2D',Interfaz:'USB',Incluye:'Estante',Modelo:'SC410',Stock:'32 uds'}},
+  {id:'LECTBAR603',cat:'pdv',name:'3NStar SC310BT 1D Wireless USB',brand:'3NStar',b:'new',bt:'Wireless',img:img('pdv'),specs:{Tipo:'Lector Inalámbrico 1D',Interfaz:'USB',Conectividad:'Wireless',Stock:'32 uds',Modelo:'SC310BT'}},
+  {id:'LECTHUE000',cat:'pdv',name:'Digital Persona HID 4500 512DPI USB',brand:'HID',b:'new',bt:'Biométrico',img:img('pdv'),specs:{Tipo:'Lector de Huellas',DPI:'512',Interfaz:'USB',Stock:'20 uds',Modelo:'4500'}},
+  {id:'CAJADIN007',cat:'pdv',name:'Caja de Dinero 3NStar CD326 Negro',brand:'3NStar',b:'hot',bt:'Gran Stock',img:img('pdv'),specs:{Tipo:'Caja de Dinero',Color:'Negro',Modelo:'CD326',Stock:'44 uds'}},
+  {id:'CONT3NS000',cat:'pdv',name:'Contador Billetes 3NStar 1000/min',brand:'3NStar',b:null,img:img('pdv'),specs:{Tipo:'Contador de Billetes',Velocidad:'1000 billetes/min',Voltaje:'110V',Color:'Blanco',Modelo:'BC1005'}},
+  {id:'AIO3NS208',cat:'pdv',name:'AIO 3NStar P415 Touch Intel N97 WiFi',brand:'3NStar',b:'hot',bt:'POS AIO',img:img('pdv'),specs:{Procesador:'Intel N97 1.20-3.60GHz',RAM:'8GB DDR4',Almacenamiento:'240GB SSD',Pantalla:'15" Touch',SO:'Sin OS',WiFi:'Incluido'}},
+  {id:'AIO3NS608',cat:'pdv',name:'AIO 3NStar P715 Touch i5 Win11',brand:'3NStar',b:'new',bt:'POS Premium',img:img('pdv'),specs:{Procesador:'Core i5',RAM:'16GB',Almacenamiento:'240GB SSD',Pantalla:'15" Touch',SO:'Windows 11'}},
+  {id:'AIOMSI600',cat:'pdv',name:'MSI Pro AP222T Touch i5-13400',brand:'MSI',b:'new',bt:'AIO Touch',img:img('pdv'),specs:{Procesador:'Core i5-13400 1.80-4.60GHz',RAM:'8GB',Almacenamiento:'512GB SSD',Pantalla:'21.5" Touch',SO:'Windows 11 Pro',Garantía:'3 años'}},
+
+  // ── TV ──
+  {id:'TELHO550',cat:'tv',name:'Televisor Horion 55" 4K Smart Android',brand:'Horion',b:'hot',bt:'Gran Stock',img:img('tv'),specs:{Pantalla:'55"',Resolución:'4K 3840x2160',Tipo:'Smart TV',SO:'Android 6.0',HDMI:'3x',Stock:'19 uds'}},
+  {id:'TELKOD001',cat:'tv',name:'Televisor Kodak 32" HD Google TV',brand:'Kodak',b:'new',bt:'Google TV',img:img('tv'),specs:{Pantalla:'32"',Tipo:'Smart Google TV',HD:'Sí',Stock:'5 uds'}},
+  {id:'TELPHI430',cat:'tv',name:'Philips 43" FHD Smart WiFi',brand:'Philips',b:null,img:img('tv'),specs:{Pantalla:'43"',Resolución:'FHD',Tipo:'Smart TV',Conectividad:'HDMI/WiFi/Red',Modelo:'43PFD6917/54'}},
+  {id:'TELPHI500',cat:'tv',name:'Philips 50" 4K Smart WiFi',brand:'Philips',b:null,img:img('tv'),specs:{Pantalla:'50"',Resolución:'4K',Tipo:'Smart TV',Conectividad:'HDMI/WiFi/Red',Modelo:'50PUD7406/54'}},
+  {id:'TELSAM650',cat:'tv',name:'Samsung 65" 4K Smart Refurb',brand:'Samsung',b:'r',bt:'Refurb',img:img('tv'),specs:{Pantalla:'65"',Resolución:'4K UHD',Tipo:'Smart TV',Condición:'Refurbished',Modelo:'UN65NU6900FXZA'}},
+
+  // ── ACCESORIOS ──
+  {id:'ADADVI300',cat:'accesorio',name:'Adaptador HDMI a VGA Unno',brand:'Unno',b:'hot',bt:'Gran Stock',img:img('accesorio'),specs:{Tipo:'Adaptador de Video',Entrada:'HDMI',Salida:'VGA',Modelo:'AD4202BK',Stock:'32 uds'}},
+  {id:'CABLE409',cat:'accesorio',name:'Cable HDMI 1.8m/6ft Unno',brand:'Unno',b:'hot',bt:'Gran Stock',img:img('accesorio'),specs:{Tipo:'Cable HDMI',Longitud:'1.8m / 6ft',Modelo:'CB4106BK',Stock:'19 uds'}},
+  {id:'CABLE424',cat:'accesorio',name:'Cable HDMI 2.0 4K 3m Unno',brand:'Unno',b:null,img:img('accesorio'),specs:{Tipo:'Cable HDMI 2.0',Resolución:'4K',Longitud:'3m / 10ft',Modelo:'CB4231BK',Stock:'28 uds'}},
+  {id:'HUB110',cat:'accesorio',name:'Hub Unno 7-en-1 USB-C HDMI MicroSD',brand:'Unno',b:'hot',bt:'Gran Stock',img:img('hub'),specs:{Tipo:'Hub USB-C',Puertos:'7 en 1',Incluye:'HDMI/USB/MicroSD',Modelo:'HB1107SV',Stock:'46 uds'}},
+  {id:'HUB111',cat:'accesorio',name:'Hub Unno 8-en-1 USB-C HDMI SD',brand:'Unno',b:'hot',bt:'Popular',img:img('hub'),specs:{Tipo:'Hub USB-C',Puertos:'8 en 1',Incluye:'HDMI/USB 3.0/SD',Modelo:'HB1109GY',Color:'Gris'}},
+  {id:'HUB100',cat:'accesorio',name:'Hub Unno 4 Puertos USB 3.0',brand:'Unno',b:'hot',bt:'Gran Stock',img:img('hub'),specs:{Tipo:'Hub USB',Puertos:'4x USB 3.0',Color:'Negro',Modelo:'HB1011BK',Stock:'88 uds'}},
+  {id:'BRATV030',cat:'accesorio',name:'Bracket Fujita para TV/Monitor 13"-37"',brand:'Fujita',b:'hot',bt:'Gran Stock',img:img('accesorio'),specs:{Tipo:'Soporte para TV/Monitor',Compatibilidad:'13" a 37"',Capacidad:'Hasta 35kg',Modelo:'BR-4F',Stock:'2712 uds'}},
+  {id:'SOPOR100',cat:'accesorio',name:'Soporte X-Micro para Monitor VESA',brand:'X-Micro',b:'hot',bt:'Gran Stock',img:img('accesorio'),specs:{Tipo:'Soporte Monitor',VESA:'50x50/75x75/100x100mm',Modelo:'HAS01',Stock:'159 uds'}},
+  {id:'TVSTICK001',cat:'accesorio',name:'Amazon Fire TV Stick 4K WiFi 6',brand:'Amazon',b:'new',bt:'4K',img:img('tv'),specs:{Tipo:'TV Stick',Resolución:'4K',WiFi:'6',Asistente:'Alexa',Modelo:'Fire TV 4K WiFi 6'}},
+  {id:'TVSTICK006',cat:'accesorio',name:'Amazon Fire TV 4K MAX WiFi 6E Alexa',brand:'Amazon',b:'new',bt:'4K MAX',img:img('tv'),specs:{Tipo:'TV Stick',Resolución:'4K',WiFi:'6E',Asistente:'Alexa',Stock:'3 uds'}},
+  {id:'TERINF000',cat:'accesorio',name:'Termómetro Infrarrojo Aiqura AD801',brand:'Aiqura',b:null,img:img('accesorio'),specs:{Tipo:'Termómetro infrarrojo',Display:'LCD',Contacto:'Sin contacto',Modelo:'AD801',Stock:'14 uds'}},
+  {id:'RELOJ700',cat:'accesorio',name:'Smartwatch Logic LIFE 40 IP67',brand:'Logic',b:'hot',bt:'Gran Stock',img:img('accesorio'),specs:{Pantalla:'2"',Resistencia:'IP67',Batería:'300mAh',Fajas:'2 incluidas',Colores:'Negro/Titanio',Stock:'110+ uds'}},
+  {id:'CARGA257',cat:'accesorio',name:'Cargador Unno 20W 6 Tomas USB-C',brand:'Unno',b:'hot',bt:'Gran Stock',img:img('accesorio'),specs:{Tipo:'Cargador de Pared',Potencia:'20W',Tomas:'6 tomas + 1 USB-A + 1 USB-C',Voltaje:'100/125V',Stock:'10 uds'}},
+];
+
+// ── RENDER ──
+const CAT_LABELS = {laptop:'Laptop',desktop:'Desktop',tableta:'Tableta',monitor:'Monitor',proyector:'Proyector',impresora:'Impresora',tinta:'Tinta/Tóner',red:'Redes',camara:'Cámara',ups:'UPS/Energía',software:'Software',storage:'Almacenamiento',componente:'Componente',periferico:'Periférico',pdv:'Punto de Venta',tv:'Televisor',accesorio:'Accesorio'};
+const BDGCLS = {hot:'bh',new:'bn',r:'br',g:'bg'};
+let cat='all',q='';
+
+function render(){
+  const f=P.filter(p=>{
+    const cm=cat==='all'||p.cat===cat;
+    const sq=q.toLowerCase().trim();
+    const sm=!sq||p.name.toLowerCase().includes(sq)||p.brand.toLowerCase().includes(sq)||p.id.toLowerCase().includes(sq)||Object.values(p.specs).some(v=>String(v).toLowerCase().includes(sq));
+    return cm&&sm;
+  });
+  document.getElementById('cn').textContent=f.length;
+  document.getElementById('grid').innerHTML=f.map((p,i)=>`
+    <div class="card" style="animation-delay:${Math.min(i*0.03,0.5)}s" onclick="open('${p.id}')">
+      <div class="card-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.style.background='#1C2A45'">
+        <span class="card-cat-tag">${CAT_LABELS[p.cat]||p.cat}</span>
+        ${p.b?`<span class="card-badge ${BDGCLS[p.b]||'bn'}">${p.bt}</span>`:''}
+      </div>
+      <div class="card-body">
+        <div class="card-sku">${p.id}</div>
+        <div class="card-name">${p.name}</div>
+        <div class="card-brief">${Object.values(p.specs).slice(0,3).join(' · ')}</div>
+      </div>
+      <div class="card-foot">
+        <span class="card-brand">${p.brand}</span>
+        <span class="card-cta">Ver más <span>→</span></span>
+      </div>
+    </div>`).join('');
+  document.getElementById('empty').classList.toggle('show',f.length===0);
+}
+
+function open(id){
+  const p=P.find(x=>x.id===id);if(!p)return;
+  document.getElementById('mimg').src=p.img;
+  document.getElementById('mimg').alt=p.name;
+  document.getElementById('mcat').textContent=CAT_LABELS[p.cat]||p.cat;
+  document.getElementById('msku').textContent=p.id;
+  document.getElementById('mname').textContent=p.name;
+  document.getElementById('mspecs').innerHTML=Object.entries(p.specs).map(([k,v])=>`<div class="spec"><span class="spec-k">${k}</span><span class="spec-v">${v}</span></div>`).join('');
+  const msg=encodeURIComponent(`Hola ITnowCR 👋\nMe interesa cotizar:\n*${p.name}*\nCódigo: ${p.id}\n\n¿Podrían darme precio y disponibilidad?`);
+  document.getElementById('mwa').href=`https://wa.me/50684866927?text=${msg}`;
+  document.getElementById('mo').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function close(){document.getElementById('mo').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('mc').onclick=close;
+document.getElementById('mcb').onclick=close;
+document.getElementById('mo').onclick=e=>{if(e.target===document.getElementById('mo'))close();};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+
+document.querySelectorAll('.fb').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');cat=b.dataset.cat;render();
+  };
+});
+const si=document.getElementById('si'),sc=document.getElementById('sc');
+si.oninput=()=>{q=si.value;sc.classList.toggle('show',q.length>0);render();};
+sc.onclick=()=>{si.value='';q='';sc.classList.remove('show');si.focus();render();};
+render();
+</script>
 </body>
 </html>
